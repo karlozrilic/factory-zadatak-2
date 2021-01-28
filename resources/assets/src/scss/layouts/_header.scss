@@ -1,0 +1,107 @@
+header {
+    display: flex;
+    flex-direction: column;
+    .top {
+        background-color: $lightGrey;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: $maxContentWidth;
+            .links {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 15px;
+                li {
+                    padding: 0 8px;
+                    img {
+                        height: 16px;
+                    }
+                    a {
+                        padding: 0 5px;
+                        @include topOfNavigationText();
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .language {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                margin: 15px;
+                li {
+                    a {
+                        @include topOfNavigationText();
+                        padding: 0 10px;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                        img {
+                            height: 16px;
+                        }
+                        &.active {
+                            color: $gold;
+                        }
+                    }
+                    &:nth-child(3) {
+                        border-right: 0.5px solid $darkTextColor;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        background-color: $darkGrey;
+        height: 73px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: $maxContentWidth;
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-left: 23px;
+                font-family: "Playfair Display";
+                font-weight: 900;
+                font-size: 50px;
+                color: $white;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            .links {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 0;
+                li {
+                    padding: 0 15px;
+                    a {
+                        color: $white;
+                        font-weight: bold;
+                        font-size: 16px;
+                        line-height: 23px;
+                        text-align: center;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

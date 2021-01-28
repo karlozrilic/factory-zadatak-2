@@ -1,0 +1,664 @@
+body {
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.vl {
+  border: 0.5px solid #1D1D1D;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.button {
+  position: relative;
+  border: none;
+  background-color: #9B6333;
+  -webkit-box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
+          box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 18px 36px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #FFFFFF;
+}
+
+.button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 30px;
+  opacity: 0.1;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card.card-slider {
+  width: 440px;
+  margin: 0 20px;
+}
+
+.card.card-slider .card-image {
+  height: 70%;
+}
+
+.card.card-slider .card-image .card-img-top {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+.card.card-slider .card-body {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 30%;
+}
+
+.card.card-slider .card-body .details {
+  padding: 30px 0 30px 30px;
+}
+
+.card.card-slider .card-body .details .card-body-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  color: #383B37;
+}
+
+.card.card-slider .card-body .details .card-link {
+  color: #9B6333;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.card.card-slider .card-body .details .card-link:hover {
+  text-decoration: none;
+  color: #9B6333;
+  opacity: 0.8;
+}
+
+.card.card-slider .card-body .details .card-link .arrow {
+  display: inline-block;
+  padding-left: 18px;
+}
+
+.card.card-slider .card-body .price {
+  padding-right: 30px;
+}
+
+.card.card-slider .card-body .price p {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: right;
+}
+
+.card.card-apartaments {
+  padding-bottom: 30px;
+}
+
+.card.card-apartaments .card-image {
+  height: 70%;
+}
+
+.card.card-apartaments .card-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+.card.card-apartaments .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #F2F2F2;
+  padding: 30px 10px;
+}
+
+.card.card-apartaments .card-body .details .card-body-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  color: #383B37;
+}
+
+.card.card-apartaments .card-body .details .card-link {
+  color: #9B6333;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.card.card-apartaments .card-body .details .card-link:hover {
+  text-decoration: none;
+  color: #9B6333;
+  opacity: 0.8;
+}
+
+.card.card-apartaments .card-body .details .card-link .arrow {
+  display: inline-block;
+  padding-left: 18px;
+}
+
+.card.card-apartaments .card-body .price p {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: right;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header .top {
+  background-color: #F0ECE7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .top .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1405px;
+}
+
+header .top .content .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+}
+
+header .top .content .links li {
+  padding: 0 8px;
+}
+
+header .top .content .links li img {
+  height: 16px;
+}
+
+header .top .content .links li a {
+  padding: 0 5px;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: #1D1D1D;
+}
+
+header .top .content .links li a:hover {
+  text-decoration: none;
+}
+
+header .top .content .language {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+}
+
+header .top .content .language li a {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: #1D1D1D;
+  padding: 0 10px;
+}
+
+header .top .content .language li a:hover {
+  text-decoration: none;
+}
+
+header .top .content .language li a img {
+  height: 16px;
+}
+
+header .top .content .language li a.active {
+  color: #9B6333;
+}
+
+header .top .content .language li:nth-child(3) {
+  border-right: 0.5px solid #1D1D1D;
+  height: 100%;
+}
+
+header .bottom {
+  background-color: #272525;
+  height: 73px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .bottom .content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1405px;
+}
+
+header .bottom .content .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 23px;
+  font-family: "Playfair Display";
+  font-weight: 900;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+
+header .bottom .content .logo:hover {
+  text-decoration: none;
+}
+
+header .bottom .content .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+header .bottom .content .links li {
+  padding: 0 15px;
+}
+
+header .bottom .content .links li a {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+}
+
+header .bottom .content .links li a:hover {
+  text-decoration: none;
+}
+
+.home-banner {
+  background-image: url(/images/bannerImage.svg?777b6c49aab848e9cbc07ff40dd86188);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 919px;
+  position: relative;
+}
+
+.home-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1D1D1D;
+  opacity: 0.5;
+}
+
+.home-banner .home-banner-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50%;
+}
+
+.home-banner .home-banner-top .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 1405px;
+  color: #FFFFFF;
+  padding-left: 23px;
+  z-index: 1;
+}
+
+.home-banner .home-banner-top .content .title {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 56px;
+}
+
+.home-banner .home-banner-top .content .sub-title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  padding-bottom: 15px;
+}
+
+.home-banner .home-banner-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50%;
+  padding: 50px 0 50px 23px;
+}
+
+.home-banner .home-banner-bottom .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 1405px;
+  z-index: 1;
+}
+
+.home-banner .home-banner-bottom .content .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 350px;
+  width: 34%;
+}
+
+.home-banner .home-banner-bottom .content .social .text {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  padding-right: 27px;
+}
+
+.home-banner .home-banner-bottom .content .social a {
+  padding-right: 35px;
+}
+
+.home-banner .home-banner-bottom .content .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: -20px;
+  width: 66%;
+  height: 350px;
+}
+
+.home-banner .home-banner-bottom .content .slider .slick-arrow {
+  color: #FFFFFF;
+}
+
+.home-banner .home-banner-bottom .content .slider .slick-list {
+  height: 100%;
+  margin-left: 50px;
+}
+
+.home-banner .home-banner-bottom .content .slider .slick-list .slick-track {
+  height: 100%;
+}
+
+.apartaments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 60px;
+  padding-left: 23px;
+}
+
+.apartaments .content {
+  max-width: 1405px;
+}
+
+.apartaments .content .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.apartaments .content .top .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.apartaments .content .top .left h1 {
+  color: #383B37;
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 56px;
+  letter-spacing: 2px;
+}
+
+.apartaments .content .top .left p {
+  color: #383B37;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  padding-bottom: 30px;
+}
+
+.apartaments .content .top .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.apartaments .content .top .right p {
+  color: #383B37;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.apartaments .content .top .right h4 {
+  color: #383B37;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  padding-top: 22px;
+  margin: 0;
+}
+
+.apartaments .content .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 60px;
+}
+
+.apartaments .content .bottom .title {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 56px;
+  letter-spacing: 2px;
+  color: #383B37;
+  padding-bottom: 30px;
+}
+
+.apartaments .content .bottom .cont {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+

@@ -1,0 +1,16 @@
+// importing abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// importing base
+@import "base/reset";
+@import "base/typography";
+
+// importing components
+@import "components/buttons";
+@import "components/card";
+
+// importing layouts
+@import "layouts/header";
+@import "layouts/home_banner";
+@import "layouts/apartaments";

@@ -1,0 +1,121 @@
+{% extends "main_layout.html.twig" %}
+{% block header %}
+    {% include "header.html.twig" %}
+{% endblock %}
+{% block content %}
+    <!-- TWIG home page -->
+    <!-- https://twig.symfony.com/doc/3.x/ -->
+    <div class="home-banner">
+        <div class="home-banner-top">
+            <div class="content">
+                <h1 class="title">Fell like home, but better.<h1>
+                <p class="sub-title">World-famous. Deeply relaxing.</p>
+                <button class="button">Learn more</button>
+            </div>
+        </div>
+        <div class="home-banner-bottom">
+            <div class="content">
+                <div class="social">
+                    <p class="text">Follow us</p>
+                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/facebookWhite.svg" /></a>
+                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/instagramWhite.svg" /></a>
+                </div>
+                <div class="slider">
+                <!--
+                <div class="card card-slider">
+                    <div class="card-image">
+                        <img class="card-img-top" src="{{base_path~directory}}/assets/images/bannerImage.svg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <div class="details">
+                            <p>Nesto</p>
+                            <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                        </div>
+                        <div class="price">
+                            <p>1kn</p>
+                        </div>
+                    </div>
+                </div>-->
+                {% for prod in products %}
+                <div class="card card-slider">
+                    <div class="card-image">
+                        <img class="card-img-top" src="{{prod.images[0].url}}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <div class="details">
+                            <p class="card-body-title">{{prod.title}}</p>
+                            <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                        </div>
+                        <div class="price">
+                            <p>{{prod.formatted_price}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="apartaments">
+        <div class="content">
+            <div class="top">
+                <div class="left">
+                    <h1>Comfort & Design to relax in Luxury Hotel</h1>
+                    <p>Every day is a new day for relaxation.</p>
+                    <button class="button">About us</button>
+                </div>
+                <div class="right">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque mattis gravida metus quis varius. Nullam sit 
+                    amet fringilla velit, non pretium nibh. Etiam condimentum diam 
+                    sapien, a hendrerit est pellentesque. Etiam condimentum diam 
+                    sapien, a hendrerit est pellentesque. Etiam condimentum diam 
+                    sapien, a hendrerit est pellentesque.</p>
+                    <h4>John Johnson</h4>
+                    <p>General manager</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <h1 class="title">Best Apartments</h1>
+                <div class="cont">
+                    <div class="row">
+                    {% for prod in products %}
+                        <div class="col-md-3">
+                            <div class="card card-apartaments">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{{prod.images[0].url}}" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="details">
+                                        <p class="card-body-title">{{prod.title}}</p>
+                                        <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                                    </div>
+                                    <div class="price">
+                                        <p>{{prod.formatted_price}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footerScripts %}
+<script>
+    $('.slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true,
+        speed: 500,
+        prevArrow: "<div class='a-left control-c prev slick-prev'><i class='fas fa-chevron-left fa-2x'></i></div>",
+        nextArrow: "<div class='a-right control-c next slick-next'><i class='fas fa-chevron-right fa-2x'></i></div>"
+    });
+</script>
+{% endblock %}

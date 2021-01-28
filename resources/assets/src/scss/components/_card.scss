@@ -1,0 +1,111 @@
+.card {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    &.card-slider {
+        width: 440px;
+        margin: 0 20px;
+        .card-image {
+            height: 70%;
+            .card-img-top {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+        .card-body {
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 30%;
+            .details {
+                padding: 30px 0 30px 30px;
+
+                .card-body-title {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 25px;
+                    color: $textColor;
+                }
+                .card-link {
+                    color: $gold;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 23px;
+                    &:hover {
+                        text-decoration: none;
+                        color: $gold;
+                        opacity: 0.8;
+                    }
+                    .arrow {
+                        display: inline-block;
+                        padding-left: 18px;
+                    }
+                }
+            }
+            .price {
+                padding-right: 30px;
+                p {
+                    font-weight: bold;
+                    font-size: 30px;
+                    line-height: 30px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    &.card-apartaments {
+        padding-bottom: 30px;
+        .card-image {
+            height: 70%;
+            img {
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+        .card-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: $cardLightGrey;
+            padding: 30px 10px;
+            .details {
+                .card-body-title {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 25px;
+                    color: $textColor;
+                }
+                .card-link {
+                    color: $gold;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 23px;
+                    &:hover {
+                        text-decoration: none;
+                        color: $gold;
+                        opacity: 0.8;
+                    }
+                    .arrow {
+                        display: inline-block;
+                        padding-left: 18px;
+                    }
+                }
+            }
+            .price {
+                p {
+                    font-weight: bold;
+                    font-size: 30px;
+                    line-height: 30px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
