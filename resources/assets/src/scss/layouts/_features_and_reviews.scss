@@ -1,0 +1,123 @@
+.features-and-reviews {
+    width: 100%;
+    background-color: $white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .features {
+        width: 100%;
+        height: 450px;
+        position: absolute;
+        top: -50%;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .features-image {
+            position: absolute;
+            left: 0;
+        }
+        .features-box {
+            padding: 0 120px;
+            width: $maxContentWidth;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            .features-text {
+                background-color: $white;
+                width: 800px;
+                height: 350px;
+                box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+                padding: 44px 60px;
+                z-index: 1;
+                .features-title {
+                    color: $textColor;
+                    font-family: "Playfair Display";
+                    font-weight: bold;
+                    font-size: 42px;
+                    line-height: 56px;
+                    letter-spacing: 2px;
+    
+                    margin-bottom: 30px;
+                }
+                .text {
+                    color: $textColor;
+                    font-size: 16px;
+                    line-height: 23px;
+    
+                    padding-bottom: 40px;
+                }
+            }
+        }
+    }
+    .reviews {
+        margin-top: 235px;
+        max-width: $maxContentWidth;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        padding: 0 120px 60px;
+        .arrows {
+            @include sliderArrows();
+            img {
+                height: 30px;
+                &#guest-reviews-prev {
+                    margin-left: 50px;
+                }
+                &#guest-reviews-next {
+                    margin-right: 50px;
+                }
+                &:last-child {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+        .reviews-title {
+            margin-left: 20px;
+        }
+        .review {
+            display: flex;
+            flex-direction: column;
+            margin: 0 20px;
+            .user {
+                border-radius: 50px;
+                height: 80px;
+                width: 440px;
+                background-color: $lightGrey;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                .user-data {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .profile-image {
+                        height: 80px;
+                        width: 80px;
+                        border-radius: 50px;
+                        object-fit: cover;
+                        object-position: 50% 50%;
+                    }
+                    .profile-data {
+                        padding-left: 10px;
+                    }
+                }
+                .rating {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding-right: 28px;
+                }
+            }
+            .review-comment {
+                color: $textColor;
+                width: 440px;
+                align-self: flex-end;
+            }
+        }
+    }
+}

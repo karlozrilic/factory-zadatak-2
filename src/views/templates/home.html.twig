@@ -105,6 +105,148 @@
             </div>
         </div>
     </div>
+
+    <div class="service-and-news">
+        <div class="left">
+            <div class="services-background">
+            <!--
+                <div class="services-text">
+                    <h1>Excellent service</h1>
+                    <h5>Every day is a new day for relaxation.</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque mattis gravida metus quis varius. Nullam sit amet 
+                    fringilla velit, non pretium nibh. Etiam condimentum diam sapien, 
+                    a hendrerit est pellentesque. Etiam condimentum diam sapien, 
+                    a hendrerit est pellentesque. Etiam condimentum diam sapien, 
+                    a hendrerit est pellentesque.</p>
+                    <a href="#">Learn more</a>
+                </div>-->
+            </div>
+            <!--
+            <div class="services-wrapper">
+                <div class="services-list">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>-->
+        </div>
+        <div class="right">
+            <img src="{{base_path~directory}}/assets/images/services/servicesImage.svg" />
+        </div>
+        <div class="content">
+            <div class="services-text">
+                <h1>Excellent service</h1>
+                <h5>Every day is a new day for relaxation.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Pellentesque mattis gravida metus quis varius. Nullam sit amet 
+                fringilla velit, non pretium nibh. Etiam condimentum diam sapien, 
+                a hendrerit est pellentesque. Etiam condimentum diam sapien, 
+                a hendrerit est pellentesque. Etiam condimentum diam sapien, 
+                a hendrerit est pellentesque.</p>
+                <a href="#">Learn more<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+            </div>
+            <div class="services-wrapper">
+                <div class="services-list">
+                    <div class="service-item">
+                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/singleBed.svg" /></div>
+                        <div class="service-content">
+                            <h5>Orthopedic beds</h5>
+                            <hr class="service-divider" />
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ispum.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/roomService.svg" /></div>
+                        <div class="service-content">
+                            <h5>Extraordinary cousine</h5>
+                            <hr class="service-divider" />
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis gravida.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/coffeeCup.svg" /></div>
+                        <div class="service-content">
+                            <h5>Custom coffee</h5>
+                            <hr class="service-divider" />
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news">
+                <h1 class="news-title">Recent news</h1>
+                <div class="news-slider">
+                    <div class="arrows">
+                        <img class='a-left control-c prev slick-prev' id="news-carousel-prev" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Previous arrow">
+                        <img class='a-right control-c next slick-next' id="news-carousel-next" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Next arrow">
+                    </div>
+                {% for n in news %}
+                    <div class="card card-news">
+                        <div class="card-image">
+                            <img class="card-img-top" src="{{n.image}}" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-category">{{n.category}}</p>
+                            <h5 class="card-body-title">{{n.title}}</h5>
+                            <p class="card-description">{{n.description}}</p>
+                            <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gray-area"></div>
+    <div class="features-and-reviews">
+        <div class="features">
+            <img class="features-image" src="{{base_path~directory}}/assets/images/featuresImage.svg" />
+            <div class="features-box">
+                <div class="features-text">
+                    <h1 class="features-title">Discover a Hotel features</h1>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque mattis gravida metus quis varius. Nullam sit amet 
+                    fringilla velit, non pretium nibh. Etiam condimentum diam sapien, 
+                    a hendrerit est pellentesque. Etiam condimentum diam sapien, a hendrerit est pellentesque.</p>
+                    <button class="button">Book now</button>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h1 class="reviews-title">Guest reviews</h1>
+            <div class="arrows">
+                <img class='a-left control-c prev slick-prev' id="guest-reviews-prev" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Previous arrow">
+                <img class='a-right control-c next slick-next' id="guest-reviews-next" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Next arrow">
+            </div>
+            {% for rev in reviews %}
+            <div class="review">
+                <div class="user">
+                    <div class="user-data">
+                        <img class="profile-image" src="{{rev.user.profile_image}}" />
+                        <p class="profile-data">{{rev.user.name}}</p>
+                    </div>
+                    <div class="rating">
+                        {% for i in range(1, 5) %}
+                            {% if i <= rev.rating %}
+                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarFull.svg" />
+                            {% else %}
+                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarEmpty.svg" />
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="review-comment">
+                    <p>{{rev.comment}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+{% block footer %}
+    {% include "footer.html.twig" %}
 {% endblock %}
 {% block footerScripts %}
 <script>
@@ -116,6 +258,27 @@
         speed: 500,
         prevArrow: "<div class='a-left control-c prev slick-prev'><i class='fas fa-chevron-left fa-2x'></i></div>",
         nextArrow: "<div class='a-right control-c next slick-next'><i class='fas fa-chevron-right fa-2x'></i></div>"
+    });
+    $('.news-slider').slick({
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        slide: ".card",
+        speed: 500,
+        prevArrow: $("#news-carousel-prev"),
+        nextArrow: $("#news-carousel-next")
+    });
+    $('.reviews').slick({
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        slide: ".review",
+        dots: true,
+        speed: 500,
+        prevArrow: $("#guest-reviews-prev"),
+        nextArrow: $("#guest-reviews-next")
     });
 </script>
 {% endblock %}

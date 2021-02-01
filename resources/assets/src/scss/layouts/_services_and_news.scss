@@ -1,0 +1,156 @@
+.service-and-news {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 240px;
+    .left {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        .services-background {
+            background-image: url('../images/services/servicesBckg.svg');
+            height: 355px;
+        }
+    }
+    .right {
+        max-width: 620px;
+        z-index: 1;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        position: absolute;
+        top: 0;
+        max-width: $maxContentWidth;
+        display: flex;
+        flex-direction: column;
+        .services-text {
+            height: 355px;
+            width: 60%;
+            padding: 44px 0 44px 120px;
+            color: $white;
+            h1 {
+                font-family: "Playfair Display";
+                font-weight: bold;
+                font-size: 42px;
+                line-height: 56px;
+                letter-spacing: 2px;
+
+                padding-bottom: 10px;
+                margin: 0;
+            }
+            h5 {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 23px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 23px;
+
+                padding: 30px 0;
+            }
+            a {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 23px;
+
+                color: $gold;
+                &:hover {
+                    text-decoration: none;
+                    opacity: 0.8;
+                }
+                .arrow {
+                    display: inline-block;
+                    padding-left: 18px;
+                }
+            }
+        }
+        .services-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            .services-list {
+                width: 70%;
+                display: flex;
+                flex-direction: row;
+                padding-left: 120px;
+                justify-content: space-between;
+                .service-item {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 255px;
+                    .service-icon {
+                        padding: 20px 0 18px;
+                        img {
+                            height: 48px;
+                        }
+                    }
+                    .service-content {
+                        padding: 10px 15px 20px;
+                        background-color: $lightGrey;
+                        min-height: 135px;
+                        h5 {
+                            font-weight: bold;
+                            font-size: 20px;
+                            line-height: 25px;
+
+                            color: $textColor;
+                            margin-bottom: 6px;
+                        }
+                        .description {
+                            font-size: 16px;
+                            line-height: 23px;
+
+                            padding-top: 4px;
+                        }
+                        .service-divider {
+                            background-color: $gold;
+                            width: 100px;
+                            margin: 0;
+                        }
+                    }
+                }
+            }   
+        }
+        .news {
+            width: 100%;
+            height: 600px;
+            margin-top: 40px;
+            padding: 0 100px;
+            .news-title {
+                color: $textColor;
+                font-family: "Playfair Display";
+                font-weight: bold;
+                font-size: 42px;
+                line-height: 56px;
+                letter-spacing: 2px;
+
+                margin: 0 0 10px 20px;
+            }
+            .news-slider {
+                .arrows {
+                    @include sliderArrows();
+                    img {
+                        height: 30px;
+                        &#news-carousel-prev {
+                            margin-left: -50px;
+                        }
+                        &#news-carousel-next {
+                            margin-right: -50px;
+                        }
+                        &:last-child {
+                            transform: rotateY(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.gray-area {
+    width: 100%;
+    height: 683px;
+    background-color: $lightGrey;
+}
