@@ -390,10 +390,6 @@ header .top .content .links li a {
   color: #1D1D1D;
 }
 
-header .top .content .links li a:hover {
-  text-decoration: none;
-}
-
 header .top .content .language {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -416,10 +412,6 @@ header .top .content .language li a {
   letter-spacing: 1px;
   color: #1D1D1D;
   padding: 0 10px;
-}
-
-header .top .content .language li a:hover {
-  text-decoration: none;
 }
 
 header .top .content .language li a img {
@@ -504,10 +496,6 @@ header .bottom .content .links li a {
   font-size: 16px;
   line-height: 23px;
   text-align: center;
-}
-
-header .bottom .content .links li a:hover {
-  text-decoration: none;
 }
 
 .home-banner {
@@ -1103,7 +1091,7 @@ header .bottom .content .links li a:hover {
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
-  padding: 0 120px 60px;
+  padding: 0 100px 60px;
 }
 
 .features-and-reviews .reviews .arrows {
@@ -1250,9 +1238,9 @@ footer .footer-main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 48px 120px 25px;
 }
 
@@ -1299,6 +1287,10 @@ footer .footer-main .brand .social a img {
   width: 22px;
 }
 
+footer .footer-main .addresses .footer-el-body .address:first-child {
+  padding-bottom: 10px;
+}
+
 footer .footer-main .addresses .footer-el-body .address .city {
   font-size: 16px;
   line-height: 25px;
@@ -1326,6 +1318,10 @@ footer .footer-main .contact-us .footer-el-body .contact {
   font-weight: bold;
   font-size: 16px;
   line-height: 25px;
+}
+
+footer .footer-main .contact-us .footer-el-body .contact:first-child {
+  padding-bottom: 10px;
 }
 
 footer .footer-copyright {
@@ -1402,7 +1398,7 @@ footer .footer-copyright .footer-copyright-container .rights {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #FFFFFF;
-  width: 30%;
+  height: 100%;
 }
 
 .footer-el .footer-el-title {
@@ -1420,11 +1416,7 @@ footer .footer-copyright .footer-copyright-container .rights {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
   height: 100%;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
 }
 
 .footer-el .footer-el-form {

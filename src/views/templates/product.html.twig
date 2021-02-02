@@ -1,7 +1,11 @@
 {% extends "main_layout.html.twig" %}
+{% block header %}
+    {% include "header.html.twig" %}
+{% endblock %}
 {% block content %}
-    <!-- TWIG product page -->
-    <!-- https://twig.symfony.com/doc/3.x/ -->
     <h1>Soba</h1>
     <p>{{ product.slug }}</p>
+{% endblock %}
+{% block footer %}
+    {% include "footer.html.twig" %}
 {% endblock %}

@@ -24,9 +24,6 @@ header {
                     a {
                         padding: 0 5px;
                         @include topOfNavigationText();
-                        &:hover {
-                            text-decoration: none;
-                        }
                     }
                 }
             }
@@ -40,9 +37,6 @@ header {
                     a {
                         @include topOfNavigationText();
                         padding: 0 10px;
-                        &:hover {
-                            text-decoration: none;
-                        }
                         img {
                             height: 16px;
                         }
@@ -96,9 +90,6 @@ header {
                         font-size: 16px;
                         line-height: 23px;
                         text-align: center;
-                        &:hover {
-                            text-decoration: none;
-                        }
                     }
                 }
             }
