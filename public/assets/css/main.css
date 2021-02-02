@@ -28,7 +28,6 @@ body {
 .button {
   position: relative;
   border: none;
-  background-color: #9B6333;
   -webkit-box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
           box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
   border-radius: 30px;
@@ -43,6 +42,21 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   color: #FFFFFF;
+}
+
+.button.btn-small {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 23px;
+  padding: 4px 18px;
+}
+
+.button.btn-gold {
+  background-color: #9B6333;
+}
+
+.button.btn-dark {
+  background-color: #383B37;
 }
 
 .button:hover::before {
@@ -166,6 +180,29 @@ body {
 
 .card.card-news .card-image {
   height: 270px;
+}
+
+.card.card-news .card-image .promo {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #9B6333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.card.card-news .card-image .promo img {
+  padding: 15px 18px;
+}
+
+.card.card-news .card-image .promo .promo-text {
+  color: #FFFFFF;
+  padding: 6px 15px 6px 0;
 }
 
 .card.card-news .card-body .card-category {
@@ -1191,5 +1228,224 @@ header .bottom .content .links li a:hover {
 footer {
   height: 320px;
   background-color: #272525;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-main {
+  height: 275px;
+  width: 1405px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 48px 120px 25px;
+}
+
+footer .footer-main .brand {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footer-main .brand .brand-logo h1 {
+  font-family: "Playfair Display";
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 48px;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+footer .footer-main .brand .brand-logo p {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+footer .footer-main .brand .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer .footer-main .brand .social .text {
+  padding-right: 20px;
+}
+
+footer .footer-main .brand .social a {
+  padding: 0 7px;
+}
+
+footer .footer-main .brand .social a img {
+  height: 22px;
+  width: 22px;
+}
+
+footer .footer-main .addresses .footer-el-body .address .city {
+  font-size: 16px;
+  line-height: 25px;
+  color: #D0D0D0;
+}
+
+footer .footer-main .addresses .footer-el-body .address .address-text {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+footer .footer-main .contact-us .footer-el-body .contact {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+footer .footer-copyright {
+  height: 45px;
+  width: 100%;
+  background-color: #1D1D1D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer-copyright .footer-copyright-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 120px;
+  color: #FFFFFF;
+  width: 1405px;
+}
+
+footer .footer-copyright .footer-copyright-container .copyright {
+  font-size: 12px;
+  line-height: 25px;
+}
+
+footer .footer-copyright .footer-copyright-container ul {
+  margin: 0;
+}
+
+footer .footer-copyright .footer-copyright-container ul li {
+  display: inline;
+  padding-right: 38px;
+}
+
+footer .footer-copyright .footer-copyright-container ul li a {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+footer .footer-copyright .footer-copyright-container .rights {
+  position: absolute;
+  right: 0px;
+  color: #D0D0D0;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.footer-el {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #FFFFFF;
+  width: 30%;
+}
+
+.footer-el .footer-el-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  padding-bottom: 15px;
+}
+
+.footer-el .footer-el-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  height: 100%;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.footer-el .footer-el-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.footer-el .footer-el-form input {
+  background-color: #272525;
+  border: none;
+  border-bottom: 1px solid #C4C4C4;
+  padding: 5px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 

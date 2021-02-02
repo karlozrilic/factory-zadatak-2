@@ -3,14 +3,12 @@
     {% include "header.html.twig" %}
 {% endblock %}
 {% block content %}
-    <!-- TWIG home page -->
-    <!-- https://twig.symfony.com/doc/3.x/ -->
     <div class="home-banner">
         <div class="home-banner-top">
             <div class="content">
                 <h1 class="title">Fell like home, but better.<h1>
                 <p class="sub-title">World-famous. Deeply relaxing.</p>
-                <button class="button">Learn more</button>
+                <button class="button btn-gold">Learn more</button>
             </div>
         </div>
         <div class="home-banner-bottom">
@@ -21,21 +19,6 @@
                     <a href="#"><img src="{{base_path~directory}}/assets/images/icons/instagramWhite.svg" /></a>
                 </div>
                 <div class="slider">
-                <!--
-                <div class="card card-slider">
-                    <div class="card-image">
-                        <img class="card-img-top" src="{{base_path~directory}}/assets/images/bannerImage.svg" alt="Card image cap">
-                    </div>
-                    <div class="card-body">
-                        <div class="details">
-                            <p>Nesto</p>
-                            <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
-                        </div>
-                        <div class="price">
-                            <p>1kn</p>
-                        </div>
-                    </div>
-                </div>-->
                 {% for prod in products %}
                 <div class="card card-slider">
                     <div class="card-image">
@@ -62,7 +45,7 @@
                 <div class="left">
                     <h1>Comfort & Design to relax in Luxury Hotel</h1>
                     <p>Every day is a new day for relaxation.</p>
-                    <button class="button">About us</button>
+                    <button class="button btn-gold">About us</button>
                 </div>
                 <div class="right">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -88,7 +71,7 @@
                                 <div class="card-body">
                                     <div class="details">
                                         <p class="card-body-title">{{prod.title}}</p>
-                                        <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                                        <a href="/room/{{prod.slug}}" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
                                     </div>
                                     <div class="price">
                                         <p>{{prod.formatted_price}}</p>
@@ -184,6 +167,13 @@
                 {% for n in news %}
                     <div class="card card-news">
                         <div class="card-image">
+                            <div class="promo">
+                                <img src="{{base_path~directory}}/assets/images/icons/priceTag.svg" />
+                                <div class="promo-text">
+                                    <p>Promo price!</p>
+                                    <p>August 25-31</p>
+                                </div>
+                            </div>
                             <img class="card-img-top" src="{{n.image}}" alt="Card image cap">
                         </div>
                         <div class="card-body">
@@ -209,7 +199,7 @@
                     Pellentesque mattis gravida metus quis varius. Nullam sit amet 
                     fringilla velit, non pretium nibh. Etiam condimentum diam sapien, 
                     a hendrerit est pellentesque. Etiam condimentum diam sapien, a hendrerit est pellentesque.</p>
-                    <button class="button">Book now</button>
+                    <button class="button btn-gold">Book now</button>
                 </div>
             </div>
         </div>
