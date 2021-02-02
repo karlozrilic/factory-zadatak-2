@@ -403,7 +403,7 @@ header .top .content .language {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 header .top .content .language li a {
@@ -451,25 +451,7 @@ header .bottom .content {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 1405px;
-}
-
-header .bottom .content .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /*padding: 0 23px;*/
-  font-family: "Playfair Display";
-  font-weight: 900;
-  font-size: 50px;
-  color: #FFFFFF;
-}
-
-header .bottom .content .logo:hover {
-  text-decoration: none;
 }
 
 header .bottom .content .links {
@@ -487,7 +469,7 @@ header .bottom .content .links {
 }
 
 header .bottom .content .links li {
-  padding: 0 15px;
+  padding: 0 32px;
 }
 
 header .bottom .content .links li a {
@@ -496,6 +478,39 @@ header .bottom .content .links li a {
   font-size: 16px;
   line-height: 23px;
   text-align: center;
+}
+
+header .bottom .content.homepage {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .bottom .content.room {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header .bottom .content.room .links button {
+  margin-left: 40px;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*padding: 0 23px;*/
+  font-family: "Playfair Display";
+  font-weight: 900;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  opacity: 0.8;
 }
 
 .home-banner {
@@ -1211,6 +1226,118 @@ header .bottom .content .links li a {
   width: 440px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+.room {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.room .room-content {
+  width: 1405px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.room .room-content .room-slider {
+  padding: 0 120px 30px;
+}
+
+.room .room-content .room-slider .room-slider-image {
+  height: 500px;
+}
+
+.room .room-content .room-slider .room-slider-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+.room .room-content .room-slider-nav {
+  /* ako je samo jedna slika u slider navigaciji 
+            uvijek vidljiva onda ide padding: 0 100px; */
+  padding: 0 100px 0 104px;
+  margin-bottom: 18px;
+  height: 165px;
+}
+
+.room .room-content .room-slider-nav .arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.room .room-content .room-slider-nav .arrows img {
+  height: 12px;
+}
+
+.room .room-content .room-slider-nav .arrows img#room-slider-prev {
+  margin-left: 80px;
+}
+
+.room .room-content .room-slider-nav .arrows img#room-slider-next {
+  margin-right: 80px;
+}
+
+.room .room-content .room-slider-nav .arrows img:last-child {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.room .room-content .room-slider-nav .room-slider-nav-image {
+  height: 162px;
+  margin: 0 15px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.room .room-content .room-slider-nav .room-slider-nav-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+.room .room-content .room-slider-nav .room-slider-nav-image.slick-current {
+  border: 3px solid #9B6333;
+}
+
+.room .room-content .room-info {
+  padding: 0 120px;
 }
 
 footer {

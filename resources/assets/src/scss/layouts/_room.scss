@@ -1,0 +1,63 @@
+.room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .room-content {
+        width: $maxContentWidth;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .room-slider {
+            padding: 0 120px 30px;
+            .room-slider-image {
+                height: 500px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+            }
+        }
+        .room-slider-nav {
+            /* ako je samo jedna slika u slider navigaciji 
+            uvijek vidljiva onda ide padding: 0 100px; */
+            padding: 0 100px 0 104px;
+            margin-bottom: 18px;
+            height: 165px;
+            .arrows {
+                @include sliderArrows();
+                img {
+                    height: 12px;
+                    &#room-slider-prev {
+                        margin-left: 80px;
+                    }
+                    &#room-slider-next {
+                        margin-right: 80px;
+                    }
+                    &:last-child {
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+            .room-slider-nav-image {
+                height: 162px;
+                margin: 0 15px;
+                cursor: pointer;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+                border: 3px solid transparent;
+                &.slick-current {
+                    border: 3px solid $gold;
+                }
+            }
+        }
+        .room-info {
+            padding: 0 120px;
+        }
+    }
+}

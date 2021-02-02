@@ -3,9 +3,55 @@
     {% include "header.html.twig" %}
 {% endblock %}
 {% block content %}
-    <h1>Soba</h1>
-    <p>{{ product.slug }}</p>
+<div class="room">
+    <div class="room-content">
+        <div class="room-slider">
+            {% for image in product.images %}
+                <div class="room-slider-image">
+                    <img src="{{image.url}}" />
+                </div>
+            {% endfor %}
+        </div>
+        <div class="room-slider-nav">
+            <div class="arrows">
+                <img class='a-left control-c prev slick-prev' id="room-slider-prev" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Previous arrow">
+                <img class='a-right control-c next slick-next' id="room-slider-next" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Next arrow">
+            </div>
+            {% for image in product.images %}
+                <div class="room-slider-nav-image">
+                    <img src="{{image.url}}" />
+                </div>
+            {% endfor %}
+        </div>
+        <div class="room-info">
+            <h1>{{ product.title }}</h1>
+        </div>
+    </div>
+</div>
 {% endblock %}
 {% block footer %}
     {% include "footer.html.twig" %}
+{% endblock %}
+{% block footerScripts %}
+<script>
+    $('.room-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 500,
+        draggable: false,
+        arrows: false
+    });
+    $('.room-slider-nav').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        speed: 500,
+        asNavFor: '.room-slider',
+        slide: '.room-slider-nav-image',
+        focusOnSelect: true,
+        prevArrow: $("#room-slider-prev"),
+        nextArrow: $("#room-slider-next")
+    });
+</script>
 {% endblock %}
