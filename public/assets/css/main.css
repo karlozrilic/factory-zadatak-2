@@ -3,6 +3,7 @@
 body {
   overflow-x: hidden;
   width: 100%;
+  color: #383B37;
 }
 
 p {
@@ -228,6 +229,59 @@ body {
   margin-bottom: 30px;
 }
 
+.card.aside-card {
+  background-color: #F2F2F2;
+}
+
+.card.aside-card:first-child {
+  margin-right: 20px;
+}
+
+.card.aside-card:last-child {
+  margin-left: 20px;
+}
+
+.card.aside-card .card-image {
+  height: 145px;
+}
+
+.card.aside-card .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 3px 10px;
+}
+
+.card.aside-card .card-body .room-data {
+  width: 100%;
+}
+
+.card.aside-card .card-body .room-data p {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.card.aside-card .card-body .room-data a {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 23px;
+  color: #9B6333;
+}
+
+.card.aside-card .card-body .price {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 31px;
+  text-align: right;
+}
+
 .card-img-top {
   height: 100%;
   width: 100%;
@@ -254,6 +308,10 @@ body {
 .card-link .arrow {
   display: inline-block;
   padding-left: 18px;
+}
+
+.card-link .arrow.small {
+  padding-left: 10px;
 }
 
 .slick-dotted .slick-slider {
@@ -1272,8 +1330,8 @@ header .bottom .content.room .links button {
 
 .room .room-content .room-slider-nav {
   /* ako je samo jedna slika u slider navigaciji 
-            uvijek vidljiva onda ide padding: 0 100px; */
-  padding: 0 100px 0 104px;
+            uvijek vidljiva onda ide padding: 0 102px; */
+  padding: 0 102px 0 106px;
   margin-bottom: 18px;
   height: 165px;
 }
@@ -1338,6 +1396,251 @@ header .bottom .content.room .links button {
 
 .room .room-content .room-info {
   padding: 0 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.room .room-content .room-info .info {
+  width: 60%;
+  margin-right: 45px;
+}
+
+.room .room-content .room-info .info .title {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 56px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.room .room-content .room-info .info .room-spec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.room .room-content .room-info .info .room-spec div {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.room .room-content .room-info .info .room-spec div img {
+  padding-right: 45px;
+}
+
+.room .room-content .room-info .info .room-description {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.room .room-content .room-info .info .room-services {
+  border: 1px solid #C4C4C4;
+  padding: 26px 35px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-bottom: 30px;
+}
+
+.room .room-content .room-info .info .room-services .service {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 16px;
+}
+
+.room .room-content .room-info .info .room-services .service img {
+  padding-right: 10px;
+}
+
+.room .room-content .room-info .info .hotel-rules {
+  margin-bottom: 30px;
+}
+
+.room .room-content .room-info .info .hotel-rules li {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.room .room-content .room-info .aside {
+  width: 40%;
+}
+
+.room .room-content .room-info .aside .booking {
+  background-color: #F0ECE7;
+  width: 100%;
+  padding: 30px 26px;
+  margin-bottom: 60px;
+}
+
+.room .room-content .room-info .aside .booking .room-price {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 31px;
+  color: #9B6333;
+  margin-bottom: 20px;
+}
+
+.room .room-content .room-info .aside .booking .aside-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.room .room-content .room-info .aside .booking .aside-button {
+  padding-top: 24px;
+  text-align: center;
+}
+
+.room .room-content .room-info .aside .recommendations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.room .room-content .room-info .aside .recommendations .rec-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.room .room-content .room-info .aside .recommendations .aside-title {
+  margin-bottom: 30px;
+}
+
+.room-hr {
+  background-color: #C4C4C4;
+  margin: 30px 0;
+}
+
+.small-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.aside-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+}
+
+.input-with-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #FFFFFF;
+  border: 1px solid #D0D0D0;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.input-with-icon:first-child {
+  margin-right: 20px;
+}
+
+.input-with-icon:last-child {
+  margin-left: 20px;
+}
+
+.input-with-icon .icon {
+  padding: 10px 15px;
+  background-color: #F0F0F0;
+  border-right: 1px solid #D0D0D0;
+  border-radius: 4px 0 0 4px;
+}
+
+.input-with-icon .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.input-with-icon input {
+  padding: 12px 8px 10px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+.input-with-icon .guests-number {
+  position: relative;
+}
+
+.input-with-icon .guests-number .guests-disabled {
+  background-color: #FFFFFF;
+}
+
+.input-with-icon .guests-number .number {
+  font-weight: bold;
+  text-align: right;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.input-with-icon .change-number {
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.input-with-icon .change-number span {
+  cursor: pointer;
+  padding: 0 5px;
+  width: 16px;
+  height: 16px;
 }
 
 footer {
