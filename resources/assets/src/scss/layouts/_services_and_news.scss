@@ -47,16 +47,11 @@
                 line-height: 23px;
             }
             p {
-                font-size: 16px;
-                line-height: 23px;
-
+                @include normalText();
                 padding: 30px 0;
             }
             a {
-                font-weight: bold;
-                font-size: 16px;
-                line-height: 23px;
-
+                @include normalTextBold();
                 color: $gold;
                 &:hover {
                     text-decoration: none;
@@ -100,9 +95,7 @@
                             margin-bottom: 6px;
                         }
                         .description {
-                            font-size: 16px;
-                            line-height: 23px;
-
+                            @include normalText();
                             padding-top: 4px;
                         }
                         .service-divider {

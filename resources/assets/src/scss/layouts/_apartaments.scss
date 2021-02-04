@@ -35,8 +35,7 @@
                 width: 50%;
                 p {
                     color: $textColor;
-                    font-size: 16px;
-                    line-height: 23px;
+                    @include normalText();
                 }
                 h4 {
                     color: $textColor;

@@ -45,20 +45,19 @@ footer {
         }
         .addresses {
             .footer-el-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 .address {
                     &:first-child {
                         padding-bottom: 10px;
                     }
                     .city {
-                        font-size: 16px;
-                        line-height: 25px;
-
+                        @include normalText();
                         color: $footerLightGrey;
                     }
                     .address-text {
-                        font-weight: bold;
-                        font-size: 16px;
-                        line-height: 25px;
+                        @include normalTextBold();
                     }
                 }
             }
@@ -73,10 +72,7 @@ footer {
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
-
-                    font-weight: bold;
-                    font-size: 16px;
-                    line-height: 25px;
+                    @include normalTextBold();
                 }
             }
         }

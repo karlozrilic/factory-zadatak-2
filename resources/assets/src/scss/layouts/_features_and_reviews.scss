@@ -44,9 +44,7 @@
                 }
                 .text {
                     color: $textColor;
-                    font-size: 16px;
-                    line-height: 23px;
-    
+                    @include normalText();
                     padding-bottom: 40px;
                 }
             }

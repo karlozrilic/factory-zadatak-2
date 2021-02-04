@@ -16,3 +16,26 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@mixin normalText {
+    font-size: 16px;
+    line-height: 23px;
+}
+
+@mixin normalTextBold {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+@mixin priceText {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+@mixin priceTextSmall {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30px;
+}

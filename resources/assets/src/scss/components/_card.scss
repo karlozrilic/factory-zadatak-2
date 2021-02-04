@@ -30,9 +30,7 @@
             .price {
                 padding-right: 30px;
                 p {
-                    font-weight: bold;
-                    font-size: 30px;
-                    line-height: 30px;
+                    @include priceText();
                     text-align: right;
                 }
             }
@@ -59,9 +57,7 @@
             }
             .price {
                 p {
-                    font-weight: bold;
-                    font-size: 30px;
-                    line-height: 30px;
+                    @include priceText();
                     text-align: right;
                 }
             }
@@ -92,10 +88,7 @@
         .card-body {
             .card-category {
                 color: $cardDarkGrey;
-                font-weight: bold;
-                font-size: 16px;
-                line-height: 23px;
-
+                @include normalTextBold();
                 padding-bottom: 10px;
             }
             .card-body-title {
@@ -108,9 +101,7 @@
             }
             .card-description {
                 color: $textColor;
-                font-size: 16px;
-                line-height: 23px;
-
+                @include normalText();
                 margin-bottom: 30px;
             }
         }
@@ -133,9 +124,7 @@
             .room-data {
                 width: 100%;
                 p {
-                    font-weight: bold;
-                    font-size: 16px;
-                    line-height: 25px;
+                    @include normalTextBold();
                 }
                 a {
                     font-weight: bold;
@@ -147,10 +136,7 @@
             }
             .price {
                 align-self: flex-end;
-                font-weight: bold;
-                font-size: 14px;
-                line-height: 31px;
-
+                @include priceTextSmall();
                 text-align: right;
             }
         }
@@ -167,9 +153,7 @@
 
 .card-link {
     color: $gold;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 23px;
+    @include normalTextBold();
     &:hover {
         text-decoration: none;
         color: $gold;
