@@ -17,6 +17,52 @@
     align-items: center;
 }
 
+@mixin logoText {
+    font-family: "Playfair Display";
+    font-weight: 900;
+    font-size: 50px;
+}
+
+@mixin logoTextFooter {
+    font-family: "Playfair Display";
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 48px;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+@mixin title {
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 56px;
+}
+
+@mixin titleWithSpacing {
+    font-family: "Playfair Display";
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 56px;
+    letter-spacing: 2px;
+}
+
+@mixin asideTitle {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 41px;
+}
+
+@mixin subtitle {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+@mixin subtitleBold {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+}
+
 @mixin normalText {
     font-size: 16px;
     line-height: 23px;
@@ -26,6 +72,17 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 23px;
+}
+
+@mixin smallText {
+    font-size: 12px;
+    line-height: 25px;
+}
+
+@mixin smallTextBold {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 25px;
 }
 
 @mixin priceText {

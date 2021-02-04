@@ -48,7 +48,7 @@ body {
 .button.btn-small {
   font-weight: bold;
   font-size: 12px;
-  line-height: 23px;
+  line-height: 25px;
   padding: 4px 18px;
 }
 
@@ -269,7 +269,7 @@ body {
 .card.aside-card .card-body .room-data a {
   font-weight: bold;
   font-size: 12px;
-  line-height: 23px;
+  line-height: 25px;
   color: #9B6333;
 }
 
@@ -558,7 +558,6 @@ header .bottom .content.room .links button {
   position: absolute;
   top: 0;
   left: 0;
-  /*padding: 0 23px;*/
   font-family: "Playfair Display";
   font-weight: 900;
   font-size: 50px;
@@ -633,10 +632,9 @@ header .bottom .content.room .links button {
 }
 
 .home-banner .home-banner-top .content .sub-title {
-  font-family: Arial, sans-serif;
   font-weight: bold;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 25px;
   padding-bottom: 15px;
 }
 
@@ -781,7 +779,7 @@ header .bottom .content.room .links button {
   color: #383B37;
   font-weight: bold;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 25px;
   padding-bottom: 30px;
 }
 
@@ -911,7 +909,7 @@ header .bottom .content.room .links button {
 .service-and-news .content .services-text h5 {
   font-weight: bold;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 25px;
 }
 
 .service-and-news .content .services-text p {
@@ -1931,7 +1929,7 @@ footer .footer-main .brand .brand-logo h1 {
 
 footer .footer-main .brand .brand-logo p {
   font-size: 20px;
-  line-height: 23px;
+  line-height: 25px;
 }
 
 footer .footer-main .brand .social {

@@ -64,12 +64,7 @@
                 width: 60%;
                 margin-right: 45px;
                 .title {
-                    font-family: "Playfair Display";
-                    font-weight: bold;
-                    font-size: 42px;
-                    line-height: 56px;
-                    letter-spacing: 2px;
-
+                    @include titleWithSpacing();
                     margin-bottom: 30px;
                 }
                 .room-spec {
@@ -77,10 +72,7 @@
                     flex-direction: row;
                     justify-content: space-between;
                     div {
-                        font-weight: bold;
-                        font-size: 20px;
-                        line-height: 25px;
-
+                        @include subtitleBold();
                         display: flex;
                         flex-direction: row;
                         align-items: center;
@@ -109,8 +101,7 @@
                 .hotel-rules {
                     margin-bottom: 30px;
                     li {
-                        font-size: 16px;
-                        line-height: 23px;
+                        @include normalText();
                     }
                 }
             }
@@ -180,9 +171,7 @@
                         justify-content: center;
                         margin-left: 10px;
                         .profile-name {
-                            font-weight: bold;
-                            font-size: 20px;
-                            line-height: 25px;
+                            @include subtitleBold();
                         }
                         .comment-time {
                             @include normalText();
@@ -278,17 +267,12 @@
 }
 
 .small-title {
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
-
+    @include subtitleBold();
     margin-bottom: 15px;
 }
 
 .aside-title {
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 41px;
+    @include asideTitle();
 }
 .input-with-icon {
     display: flex;

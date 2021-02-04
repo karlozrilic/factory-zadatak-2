@@ -11,10 +11,7 @@
     width: fit-content;
     color: $white;
     &.btn-small {
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 23px;
-
+        @include smallTextBold();
         padding: 4px 18px;
     }
     &.btn-gold {
