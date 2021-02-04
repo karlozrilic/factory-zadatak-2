@@ -9,7 +9,7 @@
         flex-direction: column;
         width: 70%;
         .services-background {
-            background-image: url('../images/services/servicesBckg.svg');
+            background-image: url('../images/services/servicesBckg.png');
             height: 355px;
         }
     }
@@ -70,9 +70,13 @@
                     flex-direction: column;
                     max-width: 255px;
                     .service-icon {
-                        padding: 20px 0 18px;
+                        margin: 20px 0 18px;
+                        height: 46px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
                         img {
-                            height: 48px;
+                            width: 80px;
                         }
                     }
                     .service-content {

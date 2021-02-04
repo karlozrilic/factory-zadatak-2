@@ -181,10 +181,15 @@
                     .reply {
                         display: flex;
                         flex-direction: row;
+                        align-items: center;
                         position: absolute;
                         top: 0;
                         right: 0;
                         cursor: pointer;
+                        img {
+                            width: 18px;
+                            height: 15px;
+                        }
                         p {
                             margin-left: 8px;
                             font-family: "Lato", sans-serif;
@@ -294,7 +299,7 @@
         border-radius: 4px 0 0 4px;
         img {
             width: 20px;
-            height: 20px;
+            max-height: 30px;
         }
     }
     input {

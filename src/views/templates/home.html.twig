@@ -15,8 +15,8 @@
             <div class="content">
                 <div class="social">
                     <p class="text">Follow us</p>
-                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/facebookWhite.svg" /></a>
-                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/instagramWhite.svg" /></a>
+                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/facebookWhite.png" /></a>
+                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/instagramWhite.png" /></a>
                 </div>
                 <div class="slider">
                 {% for prod in products %}
@@ -115,7 +115,7 @@
             </div>-->
         </div>
         <div class="right">
-            <img src="{{base_path~directory}}/assets/images/services/servicesImage.svg" />
+            <img src="{{base_path~directory}}/assets/images/services/servicesImage.png" />
         </div>
         <div class="content">
             <div class="services-text">
@@ -132,7 +132,7 @@
             <div class="services-wrapper">
                 <div class="services-list">
                     <div class="service-item">
-                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/singleBed.svg" /></div>
+                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/singleBed.png" /></div>
                         <div class="service-content">
                             <h5>Orthopedic beds</h5>
                             <hr class="service-divider" />
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/roomService.svg" /></div>
+                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/roomService.png" /></div>
                         <div class="service-content">
                             <h5>Extraordinary cousine</h5>
                             <hr class="service-divider" />
@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/coffeeCup.svg" /></div>
+                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/coffeeCup.png" /></div>
                         <div class="service-content">
                             <h5>Custom coffee</h5>
                             <hr class="service-divider" />
@@ -161,14 +161,14 @@
                 <h1 class="news-title">Recent news</h1>
                 <div class="news-slider">
                     <div class="arrows">
-                        <img class='a-left control-c prev slick-prev' id="news-carousel-prev" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Previous arrow">
-                        <img class='a-right control-c next slick-next' id="news-carousel-next" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Next arrow">
+                        <img class='a-left control-c prev slick-prev' id="news-carousel-prev" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Previous arrow">
+                        <img class='a-right control-c next slick-next' id="news-carousel-next" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Next arrow">
                     </div>
                 {% for n in news %}
                     <div class="card card-news">
                         <div class="card-image">
                             <div class="promo">
-                                <img src="{{base_path~directory}}/assets/images/icons/priceTag.svg" />
+                                <img src="{{base_path~directory}}/assets/images/icons/priceTag.png" />
                                 <div class="promo-text">
                                     <p>Promo price!</p>
                                     <p>August 25-31</p>
@@ -191,7 +191,7 @@
     <div class="gray-area"></div>
     <div class="features-and-reviews">
         <div class="features">
-            <img class="features-image" src="{{base_path~directory}}/assets/images/featuresImage.svg" />
+            <img class="features-image" src="{{base_path~directory}}/assets/images/featuresImage.png" />
             <div class="features-box">
                 <div class="features-text">
                     <h1 class="features-title">Discover a Hotel features</h1>
@@ -206,8 +206,8 @@
         <div class="reviews">
             <h1 class="reviews-title">Guest reviews</h1>
             <div class="arrows">
-                <img class='a-left control-c prev slick-prev' id="guest-reviews-prev" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Previous arrow">
-                <img class='a-right control-c next slick-next' id="guest-reviews-next" src='{{base_path~directory}}/assets/images/icons/arrow.svg' alt="Next arrow">
+                <img class='a-left control-c prev slick-prev' id="guest-reviews-prev" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Previous arrow">
+                <img class='a-right control-c next slick-next' id="guest-reviews-next" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Next arrow">
             </div>
             {% for rev in reviews %}
             <div class="review">
@@ -219,9 +219,9 @@
                     <div class="rating">
                         {% for i in range(1, 5) %}
                             {% if i <= rev.rating %}
-                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarFull.svg" />
+                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarFull.png" />
                             {% else %}
-                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarEmpty.svg" />
+                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarEmpty.png" />
                             {% endif %}
                         {% endfor %}
                     </div>

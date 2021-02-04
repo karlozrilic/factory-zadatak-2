@@ -14,8 +14,8 @@
         </div>
         <div class="room-slider-nav">
             <div class="arrows">
-                <img class="a-left control-c prev slick-prev" id="room-slider-prev" src="{{base_path~directory}}/assets/images/icons/arrow.svg" alt="Previous arrow">
-                <img class="a-right control-c next slick-next" id="room-slider-next" src="{{base_path~directory}}/assets/images/icons/arrow.svg" alt="Next arrow">
+                <img class="a-left control-c prev slick-prev" id="room-slider-prev" src="{{base_path~directory}}/assets/images/icons/arrow.png" alt="Previous arrow">
+                <img class="a-right control-c next slick-next" id="room-slider-next" src="{{base_path~directory}}/assets/images/icons/arrow.png" alt="Next arrow">
             </div>
             {% for image in product.images %}
                 <div class="room-slider-nav-image">
@@ -28,13 +28,13 @@
                 <h1 class="title">{{ product.title }}</h1>
                 <div class="room-spec">
                     <div>
-                        <img src="{{base_path~directory}}/assets/images/icons/adult.svg" /><p>{{product.max_adults}} adults</p>
+                        <img src="{{base_path~directory}}/assets/images/icons/adult.png" /><p>{{product.max_adults}} adults</p>
                     </div>
                     <div>
-                        <img src="{{base_path~directory}}/assets/images/icons/babyBoy.svg" /><p>{{product.max_children}} children</p>
+                        <img src="{{base_path~directory}}/assets/images/icons/babyBoy.png" /><p>{{product.max_children}} children</p>
                     </div>
                     <div>
-                        <img src="{{base_path~directory}}/assets/images/icons/realEstate.svg" /><p>{{product.squares}} m2</p>
+                        <img src="{{base_path~directory}}/assets/images/icons/realEstate.png" /><p>{{product.squares}} m2</p>
                     </div>
                 </div>
                 <hr class="room-hr" />
@@ -43,28 +43,28 @@
                 <h5 class="small-title">Room services</h5>
                 <div class="room-services">
                     {% if product.services[0].accessories %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Accessories</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Accessories</div>
                     {% endif %}
                     {% if product.services[1].bar %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Bar 24 hours</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Bar 24 hours</div>
                     {% endif %}
                     {% if product.services[2].cleaning %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Cleaning service</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Cleaning service</div>
                     {% endif %}
                     {% if product.services[3].phone %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Phone</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Phone</div>
                     {% endif %}
                     {% if product.services[4].restaurant %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Restaurant</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Restaurant</div>
                     {% endif %}
                     {% if product.services[5].spa_zone %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Spa zone</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Spa zone</div>
                     {% endif %}
                     {% if product.services[6].transport %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Transport</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Transport</div>
                     {% endif %}
                     {% if product.services[7].wifi %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.svg" /> Wi-Fi</div>
+                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Wi-Fi</div>
                     {% endif %}
                 </div>
                 <h5 class="small-title">Hotel rules</h5>
@@ -81,18 +81,18 @@
                     <h5 class="small-title">Dates</h5>
                     <div class="aside-inputs">
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/calendar.svg" /></div>
+                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/calendar.png" /></div>
                             <input type="text" id="fromDate" placeholder="From Date" />
                         </div>
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/calendar.svg" /></div>
+                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/calendar.png" /></div>
                             <input type="text" id="toDate" placeholder="To Date" />
                         </div>
                     </div>
                     <h5 class="small-title">Guests</h5>
                     <div class="aside-inputs">
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/user.svg" /></div>
+                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/adult.png" /></div>
                             <div class="guests-number">
                                 <input class="guests-disabled" type="text" placeholder="Adult" disabled />
                                 <input class="number" id="adult" type="text" value="1" disabled />
@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/babyBoy.svg" /></div>
+                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/babyBoy.png" /></div>
                             <div class="guests-number">
                                 <input class="guests-disabled" type="text" placeholder="Children" disabled />
                                 <input class="number" id="children" type="text" value="0" disabled />
@@ -150,7 +150,7 @@
                         <p class="comment-time">28 Aug 2020, 11:16PM</p>
                     </div>
                     <div class="reply">
-                        <img src="{{base_path~directory}}/assets/images/icons/replyArrow.svg" />
+                        <img src="{{base_path~directory}}/assets/images/icons/replyArrow.png" />
                         <p>Reply</p>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                             <p class="comment-time">28 Aug 2020, 12:17PM</p>
                         </div>
                         <div class="reply">
-                            <img src="{{base_path~directory}}/assets/images/icons/replyArrow.svg" />
+                            <img src="{{base_path~directory}}/assets/images/icons/replyArrow.png" />
                             <p>Reply</p>
                         </div>
                     </div>

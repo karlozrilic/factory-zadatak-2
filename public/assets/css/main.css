@@ -571,7 +571,7 @@ header .bottom .content.room .links button {
 }
 
 .home-banner {
-  background-image: url(/images/bannerImage.svg?777b6c49aab848e9cbc07ff40dd86188);
+  background-image: url(/images/bannerImage.png?6f9e7cbc4f5b2ac8ed6a17e976547c93);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -863,7 +863,7 @@ header .bottom .content.room .links button {
 }
 
 .service-and-news .left .services-background {
-  background-image: url(/images/servicesBckg.svg?4266bbaf37576bc6191e64e722b5ff5c);
+  background-image: url(/images/servicesBckg.png?56c4707a41efa91d16a9944e5f8e5952);
   height: 355px;
 }
 
@@ -971,11 +971,22 @@ header .bottom .content.room .links button {
 }
 
 .service-and-news .content .services-wrapper .services-list .service-item .service-icon {
-  padding: 20px 0 18px;
+  margin: 20px 0 18px;
+  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .service-and-news .content .services-wrapper .services-list .service-item .service-icon img {
-  height: 48px;
+  width: 80px;
 }
 
 .service-and-news .content .services-wrapper .services-list .service-item .service-content {
@@ -1624,10 +1635,18 @@ header .bottom .content.room .links button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
+}
+
+.room .room-content .comments .comment .comment-head .reply img {
+  width: 18px;
+  height: 15px;
 }
 
 .room .room-content .comments .comment .comment-head .reply p {
@@ -1802,7 +1821,7 @@ header .bottom .content.room .links button {
 
 .input-with-icon .icon img {
   width: 20px;
-  height: 20px;
+  max-height: 30px;
 }
 
 .input-with-icon input {
