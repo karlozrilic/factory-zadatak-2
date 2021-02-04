@@ -42,30 +42,11 @@
                 <hr class="room-hr" />
                 <h5 class="small-title">Room services</h5>
                 <div class="room-services">
-                    {% if product.services[0].accessories %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Accessories</div>
-                    {% endif %}
-                    {% if product.services[1].bar %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Bar 24 hours</div>
-                    {% endif %}
-                    {% if product.services[2].cleaning %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Cleaning service</div>
-                    {% endif %}
-                    {% if product.services[3].phone %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Phone</div>
-                    {% endif %}
-                    {% if product.services[4].restaurant %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Restaurant</div>
-                    {% endif %}
-                    {% if product.services[5].spa_zone %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Spa zone</div>
-                    {% endif %}
-                    {% if product.services[6].transport %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Transport</div>
-                    {% endif %}
-                    {% if product.services[7].wifi %}
-                        <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> Wi-Fi</div>
-                    {% endif %}
+                    {% for i in range(0, product.services|length-1) %}
+                        {% if attribute(product.services[i], keys[i]) == true %}
+                            <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> {{services[i]}}</div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
                 <h5 class="small-title">Hotel rules</h5>
                 <ul class="hotel-rules">
