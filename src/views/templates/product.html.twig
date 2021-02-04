@@ -139,6 +139,70 @@
                 </div>
             </div>
         </div>
+        <div class="comments">
+            <h5 class="small-title">Comments</h5>
+            {% for comment in product.comments %}
+            <div class="comment">
+                <div class="comment-head">
+                    <div class="profile-image"><img src="{{comment.user.profile_image}}" /></div>
+                    <div class="profile-info">
+                        <p class="profile-name">{{comment.user.name}}</p>
+                        <p class="comment-time">28 Aug 2020, 11:16PM</p>
+                    </div>
+                    <div class="reply">
+                        <img src="{{base_path~directory}}/assets/images/icons/replyArrow.svg" />
+                        <p>Reply</p>
+                    </div>
+                </div>
+                <div class="comment-body">
+                    {{comment.comment}}
+                </div>
+                {% for reply in comment.replies %}
+                <div class="replies">
+                    <div class="comment-head">
+                        <div class="profile-image"><img src="{{reply.user.profile_image}}" /></div>
+                        <div class="profile-info">
+                            <p class="profile-name">{{reply.user.name}}</p>
+                            <p class="comment-time">28 Aug 2020, 12:17PM</p>
+                        </div>
+                        <div class="reply">
+                            <img src="{{base_path~directory}}/assets/images/icons/replyArrow.svg" />
+                            <p>Reply</p>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                    {{reply.comment}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <h5 class="small-title">Leave a comment</h5>
+            <form class="comment-form" method="POST" action="/">
+                <div class="comment-form-top">
+                    <div class="input">
+                        <label for="name">Name</label>
+                        <input type="text" placeholder="Your name" id="name" class="comment-input" />
+                    </div>
+                    <div class="input">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Your email" id="email" class="comment-input" />
+                    </div>
+                </div>
+                <div class="comment-form-bottom">
+                    <div class="labels">
+                        <label for="textarea">Comment</label>
+                        <label for="textarea" id="count">0/500</label>
+                    </div>
+                    <textarea id="textarea" class="comment-input" placeholder="Your comment"></textarea>
+                </div>
+                <div class="comment-checkbox">
+                    <input type="checkbox" id="comment-save" name="save" class="checkbox">
+                    <label for="comment-save">Save my name and email in this browser for the next time I comment.</label>
+                </div>
+                <button class="button btn-dark">Comment</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -237,5 +301,21 @@
             }
 		});
 	});
+</script>
+<script>
+    var limit = 500;
+    $("#textarea").attr("maxlength",limit);
+    $("#textarea").keyup(function(){
+        if ($(this).val().length > limit) {
+            return;
+        }
+        $("#count").text($(this).val().length+"/"+limit);
+    });
+    $("#textarea").keydown(function(){
+        if ($(this).val().length > limit) {
+            return;
+        }
+        $("#count").text($(this).val().length+"/"+limit);
+    });
 </script>
 {% endblock %}

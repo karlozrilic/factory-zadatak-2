@@ -158,6 +158,131 @@
                 }
             }
         }
+        .comments {
+            margin-left: 120px;
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            .comment {
+                position: relative;
+                .comment-head {
+                    display: flex;
+                    flex-direction: row;
+                    .profile-image {
+                        width: 80px;
+                        height: 80px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: 50% 50%;
+                            border-radius: 96px;
+                        }
+                    }
+                    .profile-info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin-left: 10px;
+                        .profile-name {
+                            font-weight: bold;
+                            font-size: 20px;
+                            line-height: 25px;
+                        }
+                        .comment-time {
+                            font-size: 16px;
+                            line-height: 23px;
+                            color: $cardDarkGrey;
+                        }
+                    }
+                    .reply {
+                        display: flex;
+                        flex-direction: row;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        cursor: pointer;
+                        p {
+                            margin-left: 8px;
+                            font-family: "Lato", sans-serif;
+                        }
+                    }
+                }
+                .comment-body {
+                    margin-left: 120px;
+                    margin-bottom: 30px;
+
+                    font-size: 16px;
+                    line-height: 23px;
+                }
+                .replies {
+                    position: relative;
+                    margin: 0 120px;
+                }
+            }
+            .comment-form {
+                width: 920px;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 60px;
+                .comment-form-top {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-bottom: 10px;
+                    .input {
+                        display: flex;
+                        flex-direction: column;
+                        width: 440px;
+                        label {
+                            font-size: 16px;
+                            line-height: 23px;
+
+                            margin: 0 0 5px 15px;
+                        }
+                    }
+                }
+                .comment-form-bottom {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 15px;
+                    textarea {
+                        height: 150px;
+                        resize: none;
+                    }
+                    .labels {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 0 15px;
+                        label {
+                            font-size: 16px;
+                            line-height: 23px;
+
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+                .comment-checkbox {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding-bottom: 24px;
+                    .checkbox {
+                        margin-right: 10px;
+                        width: 24px;
+                        height: 24px;
+                        outline: 1px solid $inputBorder;
+                    }
+                    label {
+                        font-size: 16px;
+                        line-height: 23px;
+
+                        margin: 0;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -233,5 +358,18 @@
             width: 16px;
             height: 16px;
         }
+    }
+}
+.comment-input {
+    border: 1px solid $inputBorder;
+    padding: 15px 20px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+    &::placeholder {
+        color: $textColor;
+        mix-blend-mode: normal;
+        opacity: 0.3;
     }
 }

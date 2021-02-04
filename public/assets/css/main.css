@@ -1550,6 +1550,210 @@ header .bottom .content.room .links button {
   margin-bottom: 30px;
 }
 
+.room .room-content .comments {
+  margin-left: 120px;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.room .room-content .comments .comment {
+  position: relative;
+}
+
+.room .room-content .comments .comment .comment-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.room .room-content .comments .comment .comment-head .profile-image {
+  width: 80px;
+  height: 80px;
+}
+
+.room .room-content .comments .comment .comment-head .profile-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  border-radius: 96px;
+}
+
+.room .room-content .comments .comment .comment-head .profile-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10px;
+}
+
+.room .room-content .comments .comment .comment-head .profile-info .profile-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.room .room-content .comments .comment .comment-head .profile-info .comment-time {
+  font-size: 16px;
+  line-height: 23px;
+  color: #B2B2B2;
+}
+
+.room .room-content .comments .comment .comment-head .reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.room .room-content .comments .comment .comment-head .reply p {
+  margin-left: 8px;
+  font-family: "Lato", sans-serif;
+}
+
+.room .room-content .comments .comment .comment-body {
+  margin-left: 120px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.room .room-content .comments .comment .replies {
+  position: relative;
+  margin: 0 120px;
+}
+
+.room .room-content .comments .comment-form {
+  width: 920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 60px;
+}
+
+.room .room-content .comments .comment-form .comment-form-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.room .room-content .comments .comment-form .comment-form-top .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 440px;
+}
+
+.room .room-content .comments .comment-form .comment-form-top .input label {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0 0 5px 15px;
+}
+
+.room .room-content .comments .comment-form .comment-form-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.room .room-content .comments .comment-form .comment-form-bottom textarea {
+  height: 150px;
+  resize: none;
+}
+
+.room .room-content .comments .comment-form .comment-form-bottom .labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+}
+
+.room .room-content .comments .comment-form .comment-form-bottom .labels label {
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 5px;
+}
+
+.room .room-content .comments .comment-form .comment-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 24px;
+}
+
+.room .room-content .comments .comment-form .comment-checkbox .checkbox {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  outline: 1px solid #CCCCCC;
+}
+
+.room .room-content .comments .comment-form .comment-checkbox label {
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+}
+
 .room-hr {
   background-color: #C4C4C4;
   margin: 30px 0;
@@ -1641,6 +1845,40 @@ header .bottom .content.room .links button {
   padding: 0 5px;
   width: 16px;
   height: 16px;
+}
+
+.comment-input {
+  border: 1px solid #CCCCCC;
+  padding: 15px 20px;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.comment-input::-webkit-input-placeholder {
+  color: #383B37;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.comment-input::-moz-placeholder {
+  color: #383B37;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.comment-input::-ms-input-placeholder {
+  color: #383B37;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.comment-input::placeholder {
+  color: #383B37;
+  mix-blend-mode: normal;
+  opacity: 0.3;
 }
 
 footer {
