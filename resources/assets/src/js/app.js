@@ -1,23 +1,133 @@
-import Vue from 'vue';
-require('@fortawesome/fontawesome-free/js/all.js');
+var hasProduct = document.currentScript.getAttribute('product');
+$(() => {
+    if (hasProduct) {
+        $('.room-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 500,
+            draggable: false,
+            arrows: false
+        });
+        $('.room-slider-nav').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            speed: 500,
+            asNavFor: '.room-slider',
+            slide: '.room-slider-nav-image',
+            focusOnSelect: true,
+            prevArrow: $("#room-slider-prev"),
+            nextArrow: $("#room-slider-next")
+        });
+    
+        var fromDateConfig = {
+            defaultDate: "2020-01-01",
+            disable: listOfReservedDates,
+            dateFormat: "Y-m-d",
+            allowInput: true,
+            locale: {
+                firstDayOfWeek: 1
+            },
+            onChange: function(selectedDates, dateStr, instance) {
+                for (var i=0; i<listOfReservedDates.length; i++) {
+                    if (new Date(listOfReservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
+                        toDate.set("maxDate", listOfReservedDates[i]);
+                        toDate.set("minDate", fromDate.selectedDates[0]);
+                        toDate.jumpToDate(fromDate.selectedDates[0]);
+                        break;
+                    } else {
+                        toDate.set("maxDate", null);
+                        toDate.set("minDate", fromDate.selectedDates[0]);
+                        toDate.jumpToDate(fromDate.selectedDates[0]);
+                    }
+                }
+            }
+        };
+        var toDateConfig = {
+            disable: listOfReservedDates,
+            dateFormat: "Y-m-d",
+            allowInput: true,
+            locale: {
+                firstDayOfWeek: 1
+            }
+        };
+        var fromDate = $("#fromDate").flatpickr(fromDateConfig);
+        var toDate = $("#toDate").flatpickr(toDateConfig);
 
-Vue.component('v-application', require('./components/app.vue'))
 
-Vue.component('v-container', require('./components/container.vue'))
-Vue.component('v-header', require('./components/header.vue'))
-Vue.component('v-footer', require('./components/footer.vue'))
-
-Vue.component('v-card', require('./components/card/card.vue'))
-Vue.component('v-card-header', require('./components/card/card-header.vue'))
-Vue.component('v-card-footer', require('./components/card/card-footer.vue'))
-Vue.component('v-card-body', require('./components/card/card-body.vue'))
-
-Vue.component('v-btn', require('./components/button.vue'))
-
-Vue.prototype.$window = window;
-
-const app = new Vue({
-    el: '#app'
+        $(".minus").on("click", (event) => {
+            var $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
+            if (parseInt($input.val()) <= 0) {
+                return;
+            }
+            var count = parseInt($input.val()) - 1;
+            if ($input.attr("id") === "adult") {
+                count = count < 1 ? 1 : count;
+            }
+            $input.val(count);
+            return;
+        });
+        $(".plus").on("click", (event) => {
+            var $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
+            var count = parseInt($input.val());
+            if ($input.attr("id") === "adult") {
+                if (count < maxAdult) {
+                    $input.val(parseInt($input.val()) + 1);
+                    return;
+                }
+            }
+            if (count < maxChildren) {
+                $input.val(parseInt($input.val()) + 1);
+                return;
+            }
+        });
+        
+        var limit = 500;
+        $("#textarea").attr("maxlength",limit);
+        $("#textarea").on("keyup", (event) => {
+            if ($(event.currentTarget).val().length > limit) {
+                return;
+            }
+            $("#count").text($(event.currentTarget).val().length+"/"+limit);
+        });
+        $("#textarea").on("keydown", (event) => {
+            if ($(event.currentTarget).val().length > limit) {
+                return;
+            }
+            $("#count").text($(event.currentTarget).val().length+"/"+limit);
+        });
+    } else {
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            speed: 500,
+            slide: ".card",
+            prevArrow: $("#home-banner-prev"),
+            nextArrow: $("#home-banner-next")
+        });
+        $('.news-slider').slick({
+            infinite: true,
+            autoplay: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            slide: ".card",
+            speed: 500,
+            prevArrow: $("#news-carousel-prev"),
+            nextArrow: $("#news-carousel-next")
+        });
+        $('.reviews').slick({
+            infinite: true,
+            autoplay: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            slide: ".review",
+            dots: true,
+            speed: 500,
+            prevArrow: $("#guest-reviews-prev"),
+            nextArrow: $("#guest-reviews-next")
+        });
+    }
 });
-
-window.vapp = app;

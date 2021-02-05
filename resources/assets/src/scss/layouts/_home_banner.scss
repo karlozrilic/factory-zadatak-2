@@ -27,7 +27,6 @@
             align-items: flex-start;
             width: $maxContentWidth;
             color: $white;
-            /*padding: 0 23px;*/
             z-index: 1;
             .title {
                 @include title();
@@ -55,7 +54,6 @@
                 flex-direction: row;
                 align-items: flex-end;
                 height: 350px;
-                /*padding-left: 23px;*/
                 width: 34%;
                 .text {
                     color: $white;
@@ -74,8 +72,14 @@
                 right: -20px;
                 width: 66%;
                 height: 350px;
-                .slick-arrow {
-                    color: $white;
+                .arrows {
+                    @include sliderArrows();
+                    img {
+                        height: 30px;
+                        &:last-child {
+                            transform: rotateY(180deg);
+                        }
+                    }
                 }
                 .slick-list {
                     height: 100%;

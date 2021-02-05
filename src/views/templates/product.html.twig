@@ -1,79 +1,89 @@
 {% extends "main_layout.html.twig" %}
+
+{% block page_title %}{{product.title}}{% endblock %}
+
 {% block header %}
     {% include "header.html.twig" %}
 {% endblock %}
+
 {% block content %}
 <div class="room">
     <div class="room-content">
         <div class="room-slider">
+
             {% for image in product.images %}
                 <div class="room-slider-image">
-                    <img src="{{image.url}}" />
+                    <img src="{{ image.url }}" />
                 </div>
             {% endfor %}
+
         </div>
         <div class="room-slider-nav">
             <div class="arrows">
-                <img class="a-left control-c prev slick-prev" id="room-slider-prev" src="{{base_path~directory}}/assets/images/icons/arrow.png" alt="Previous arrow">
-                <img class="a-right control-c next slick-next" id="room-slider-next" src="{{base_path~directory}}/assets/images/icons/arrow.png" alt="Next arrow">
+                <img class="a-left control-c prev slick-prev" id="room-slider-prev" src="{{ base_path~directory }}/assets/images/icons/arrow.png" alt="Previous arrow">
+                <img class="a-right control-c next slick-next" id="room-slider-next" src="{{ base_path~directory }}/assets/images/icons/arrow.png" alt="Next arrow">
             </div>
+
             {% for image in product.images %}
                 <div class="room-slider-nav-image">
-                    <img src="{{image.url}}" />
+                    <img src="{{ image.url }}" />
                 </div>
             {% endfor %}
+
         </div>
         <div class="room-info">
             <div class="info">
                 <h1 class="title">{{ product.title }}</h1>
                 <div class="room-spec">
                     <div>
-                        <img src="{{base_path~directory}}/assets/images/icons/adult.png" /><p>{{product.max_adults}} adults</p>
+                        <img src="{{ base_path~directory }}/assets/images/icons/adult.png" /><p>{{ product.max_adults }} adults</p>
                     </div>
                     <div>
-                        <img src="{{base_path~directory}}/assets/images/icons/babyBoy.png" /><p>{{product.max_children}} children</p>
+                        <img src="{{ base_path~directory }}/assets/images/icons/babyBoy.png" /><p>{{ product.max_children }} children</p>
                     </div>
                     <div>
-                        <img src="{{base_path~directory}}/assets/images/icons/realEstate.png" /><p>{{product.squares}} m2</p>
+                        <img src="{{ base_path~directory }}/assets/images/icons/realEstate.png" /><p>{{ product.squares }} m2</p>
                     </div>
                 </div>
                 <hr class="room-hr" />
-                <p class="room-description">{{product.description}}</p>
+                <p class="room-description">{{ product.description }}</p>
                 <hr class="room-hr" />
                 <h5 class="small-title">Room services</h5>
                 <div class="room-services">
+
                     {% for i in range(0, product.services|length-1) %}
                         {% if attribute(product.services[i], keys[i]) == true %}
-                            <div class="service"><img src="{{base_path~directory}}/assets/images/icons/check.png" /> {{services[i]}}</div>
+                            <div class="service"><img src="{{ base_path~directory }}/assets/images/icons/check.png" /> {{ services[i] }}</div>
                         {% endif %}
                     {% endfor %}
+
                 </div>
                 <h5 class="small-title">Hotel rules</h5>
                 <ul class="hotel-rules">
                     {% for rule in product.hotel_rules %}
-                    <li>- {{rule}}</li>
+                    <li>- {{ rule }}</li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="aside">
                 <div class="booking">
                     <h1 class="aside-title">Start booking</h1>
-                    <h3 class="room-price">{{product.formatted_price}}</h3>
+                    <h3 class="room-price">{{ product.formatted_price }}</h3>
                     <h5 class="small-title">Dates</h5>
                     <div class="aside-inputs">
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/calendar.png" /></div>
+                            <div class="icon"><img src="{{ base_path~directory }}/assets/images/icons/calendar.png" /></div>
                             <input type="text" id="fromDate" placeholder="From Date" />
                         </div>
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/calendar.png" /></div>
+                            <div class="icon"><img src="{{ base_path~directory }}/assets/images/icons/calendar.png" /></div>
                             <input type="text" id="toDate" placeholder="To Date" />
                         </div>
                     </div>
                     <h5 class="small-title">Guests</h5>
                     <div class="aside-inputs">
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/adult.png" /></div>
+                            <div class="icon"><img src="{{ base_path~directory }}/assets/images/icons/adult.png" /></div>
                             <div class="guests-number">
                                 <input class="guests-disabled" type="text" placeholder="Adult" disabled />
                                 <input class="number" id="adult" type="text" value="1" disabled />
@@ -84,7 +94,7 @@
                             </div>
                         </div>
                         <div class="input-with-icon">
-                            <div class="icon"><img src="{{base_path~directory}}/assets/images/icons/babyBoy.png" /></div>
+                            <div class="icon"><img src="{{ base_path~directory }}/assets/images/icons/babyBoy.png" /></div>
                             <div class="guests-number">
                                 <input class="guests-disabled" type="text" placeholder="Children" disabled />
                                 <input class="number" id="children" type="text" value="0" disabled />
@@ -102,62 +112,68 @@
                 <div class="recommendations">
                     <h1 class="aside-title">You may also like</h1>
                     <div class="rec-container">
+
                         {% for rec in recommended %}
                         <div class="card aside-card">
                             <div class="card-image">
-                                <img class="card-img-top" src="{{rec.images[1].url}}" />
+                                <img class="card-img-top" src="{{ rec.images[1].url }}" />
                             </div>
                             <div class="card-body">
                                 <div class="room-data">
-                                    <p>{{rec.title}}</p>
+                                    <p>{{ rec.title }}</p>
                                     <a href="#" class="card-link">View details<div class="arrow small"><i class="fas fa-chevron-right"></i></div></a>
                                 </div>
-                                <div class="price">{{rec.formatted_price}}</div>
+                                <div class="price">{{ rec.formatted_price }}</div>
                             </div>
                         </div>
                         {% endfor %}
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="comments">
             <h5 class="small-title">Comments</h5>
+
             {% for comment in product.comments %}
             <div class="comment">
                 <div class="comment-head">
-                    <div class="profile-image"><img src="{{comment.user.profile_image}}" /></div>
+                    <div class="profile-image"><img src="{{ comment.user.profile_image }}" /></div>
                     <div class="profile-info">
-                        <p class="profile-name">{{comment.user.name}}</p>
+                        <p class="profile-name">{{ comment.user.name }}</p>
                         <p class="comment-time">28 Aug 2020, 11:16PM</p>
                     </div>
                     <div class="reply">
-                        <img src="{{base_path~directory}}/assets/images/icons/replyArrow.png" />
+                        <img src="{{ base_path~directory }}/assets/images/icons/replyArrow.png" />
                         <p>Reply</p>
                     </div>
                 </div>
                 <div class="comment-body">
-                    {{comment.comment}}
+                    {{ comment.comment }}
                 </div>
+
                 {% for reply in comment.replies %}
                 <div class="replies">
                     <div class="comment-head">
-                        <div class="profile-image"><img src="{{reply.user.profile_image}}" /></div>
+                        <div class="profile-image"><img src="{{ reply.user.profile_image }}" /></div>
                         <div class="profile-info">
-                            <p class="profile-name">{{reply.user.name}}</p>
+                            <p class="profile-name">{{ reply.user.name }}</p>
                             <p class="comment-time">28 Aug 2020, 12:17PM</p>
                         </div>
                         <div class="reply">
-                            <img src="{{base_path~directory}}/assets/images/icons/replyArrow.png" />
+                            <img src="{{ base_path~directory }}/assets/images/icons/replyArrow.png" />
                             <p>Reply</p>
                         </div>
                     </div>
                     <div class="comment-body">
-                    {{reply.comment}}
+                    {{ reply.comment }}
                     </div>
                 </div>
                 {% endfor %}
+
             </div>
             {% endfor %}
+
             <h5 class="small-title">Leave a comment</h5>
             <form class="comment-form" method="POST" action="/">
                 <div class="comment-form-top">
@@ -187,116 +203,16 @@
     </div>
 </div>
 {% endblock %}
+
 {% block footer %}
     {% include "footer.html.twig" %}
 {% endblock %}
+
 {% block footerScripts %}
 <script>
-    $('.room-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        speed: 500,
-        draggable: false,
-        arrows: false
-    });
-    $('.room-slider-nav').slick({
-        infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        speed: 500,
-        asNavFor: '.room-slider',
-        slide: '.room-slider-nav-image',
-        focusOnSelect: true,
-        prevArrow: $("#room-slider-prev"),
-        nextArrow: $("#room-slider-next")
-    });
+    var listOfReservedDates = [{% for date in product.reserved_dates %}'{{ date.date }}',{% endfor %}];
+    var maxAdult = {{ product.max_adults }};
+    var maxChildren = {{ product.max_children }};
 </script>
-<script>
-    var listOfReservedDates = [{% for date in product.reserved_dates %}"{{date.date}}",{% endfor %}];
-    var fromDateConfig = {
-        defaultDate: "2020-01-01",
-        disable: listOfReservedDates,
-        dateFormat: "Y-m-d",
-        allowInput: true,
-        locale: {
-            firstDayOfWeek: 1
-        },
-        onChange: function(selectedDates, dateStr, instance) {
-            for (var i=0; i<listOfReservedDates.length; i++) {
-                if (new Date(listOfReservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
-                    toDate.set("maxDate", listOfReservedDates[i]);
-                    toDate.set("minDate", fromDate.selectedDates[0]);
-                    toDate.jumpToDate(fromDate.selectedDates[0]);
-                    break;
-                } else {
-                    toDate.set("maxDate", null);
-                    toDate.set("minDate", fromDate.selectedDates[0]);
-                    toDate.jumpToDate(fromDate.selectedDates[0]);
-                }
-            }
-        }
-    };
-    var toDateConfig = {
-        disable: listOfReservedDates,
-        dateFormat: "Y-m-d",
-        allowInput: true,
-        locale: {
-            firstDayOfWeek: 1
-        }
-    };
-    var fromDate = $("#fromDate").flatpickr(fromDateConfig);
-    var toDate = $("#toDate").flatpickr(toDateConfig);
-</script>
-<script>
-    $(document).ready(function() {
-        var maxAdult = {{product.max_adults}};
-        var maxChildren = {{product.max_children}};
-		$('.minus').click(function () {
-			var $input = $(this).parent().parent().find('.guests-number').find('.number');
-            if (parseInt($input.val()) <= 0) {
-                return;
-            }
-            var count = parseInt($input.val()) - 1;
-            if ($input.attr('id') === 'adult') {
-                count = count < 1 ? 1 : count;
-            }
-			$input.val(count);
-			$input.change();
-			return;
-		});
-		$('.plus').click(function () {
-			var $input = $(this).parent().parent().find('.guests-number').find('.number');
-            var count = parseInt($input.val());
-            if ($input.attr('id') === 'adult') {
-                if (count < maxAdult) {
-                    $input.val(parseInt($input.val()) + 1);
-			        $input.change();
-                    return;
-                }
-            }
-            if (count < maxChildren) {
-                $input.val(parseInt($input.val()) + 1);
-			    $input.change();
-                return;
-            }
-		});
-	});
-</script>
-<script>
-    var limit = 500;
-    $("#textarea").attr("maxlength",limit);
-    $("#textarea").keyup(function(){
-        if ($(this).val().length > limit) {
-            return;
-        }
-        $("#count").text($(this).val().length+"/"+limit);
-    });
-    $("#textarea").keydown(function(){
-        if ($(this).val().length > limit) {
-            return;
-        }
-        $("#count").text($(this).val().length+"/"+limit);
-    });
-</script>
+<script src="/assets/js/app.js" product=true></script>
 {% endblock %}

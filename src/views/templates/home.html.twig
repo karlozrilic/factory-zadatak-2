@@ -1,12 +1,16 @@
 {% extends "main_layout.html.twig" %}
+
+{% block page_title %}Hotel{% endblock %}
+
 {% block header %}
     {% include "header.html.twig" %}
 {% endblock %}
+
 {% block content %}
     <div class="home-banner">
         <div class="home-banner-top">
             <div class="content">
-                <h1 class="title">Fell like home, but better.<h1>
+                <h1 class="title">Fell like home, but better.</h1>
                 <p class="sub-title">World-famous. Deeply relaxing.</p>
                 <button class="button btn-gold">Learn more</button>
             </div>
@@ -15,26 +19,32 @@
             <div class="content">
                 <div class="social">
                     <p class="text">Follow us</p>
-                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/facebookWhite.png" /></a>
-                    <a href="#"><img src="{{base_path~directory}}/assets/images/icons/instagramWhite.png" /></a>
+                    <a href="#"><img src="{{ base_path~directory }}/assets/images/icons/facebookWhite.png" /></a>
+                    <a href="#"><img src="{{ base_path~directory }}/assets/images/icons/instagramWhite.png" /></a>
                 </div>
                 <div class="slider">
+                    <div class="arrows">
+                        <img class='a-left control-c prev slick-prev' id="home-banner-prev" src='{{ base_path~directory }}/assets/images/icons/whiteArrow.png' alt="Previous arrow">
+                        <img class='a-right control-c next slick-next' id="home-banner-next" src='{{ base_path~directory }}/assets/images/icons/whiteArrow.png' alt="Next arrow">
+                    </div>
+
                 {% for prod in products %}
                 <div class="card card-slider">
                     <div class="card-image">
-                        <img class="card-img-top" src="{{prod.images[0].url}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ prod.images[0].url }}" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <div class="details">
-                            <p class="card-body-title">{{prod.title}}</p>
-                            <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                            <p class="card-body-title">{{ prod.title }}</p>
+                            <a href="/room/{{ prod.slug }}" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
                         </div>
                         <div class="price">
-                            <p>{{prod.formatted_price}}</p>
+                            <p>{{ prod.formatted_price }}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -62,27 +72,26 @@
                 <h1 class="title">Best Apartments</h1>
                 <div class="cont">
                     <div class="row">
+
                     {% for prod in products %}
                         <div class="col-md-3">
                             <div class="card card-apartaments">
                                 <div class="card-image">
-                                    <img class="card-img-top" src="{{prod.images[0].url}}" alt="Card image cap">
+                                    <img class="card-img-top" src="{{ prod.images[0].url }}" alt="Card image cap">
                                 </div>
                                 <div class="card-body">
                                     <div class="details">
-                                        <p class="card-body-title">{{prod.title}}</p>
-                                        <a href="/room/{{prod.slug}}" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
+                                        <p class="card-body-title">{{ prod.title }}</p>
+                                        <a href="/room/{{ prod.slug }}" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
                                     </div>
                                     <div class="price">
-                                        <p>{{prod.formatted_price}}</p>
+                                        <p>{{ prod.formatted_price }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3"></div>
+
                     </div>
                 </div>
             </div>
@@ -92,30 +101,10 @@
     <div class="service-and-news">
         <div class="left">
             <div class="services-background">
-            <!--
-                <div class="services-text">
-                    <h1>Excellent service</h1>
-                    <h5>Every day is a new day for relaxation.</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Pellentesque mattis gravida metus quis varius. Nullam sit amet 
-                    fringilla velit, non pretium nibh. Etiam condimentum diam sapien, 
-                    a hendrerit est pellentesque. Etiam condimentum diam sapien, 
-                    a hendrerit est pellentesque. Etiam condimentum diam sapien, 
-                    a hendrerit est pellentesque.</p>
-                    <a href="#">Learn more</a>
-                </div>-->
             </div>
-            <!--
-            <div class="services-wrapper">
-                <div class="services-list">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>-->
         </div>
         <div class="right">
-            <img src="{{base_path~directory}}/assets/images/services/servicesImage.png" />
+            <img src="{{ base_path~directory }}/assets/images/services/servicesImage.png" />
         </div>
         <div class="content">
             <div class="services-text">
@@ -132,7 +121,7 @@
             <div class="services-wrapper">
                 <div class="services-list">
                     <div class="service-item">
-                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/singleBed.png" /></div>
+                        <div class="service-icon"><img src="{{ base_path~directory }}/assets/images/icons/singleBed.png" /></div>
                         <div class="service-content">
                             <h5>Orthopedic beds</h5>
                             <hr class="service-divider" />
@@ -140,7 +129,7 @@
                         </div>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/roomService.png" /></div>
+                        <div class="service-icon"><img src="{{ base_path~directory }}/assets/images/icons/roomService.png" /></div>
                         <div class="service-content">
                             <h5>Extraordinary cousine</h5>
                             <hr class="service-divider" />
@@ -148,7 +137,7 @@
                         </div>
                     </div>
                     <div class="service-item">
-                        <div class="service-icon"><img src="{{base_path~directory}}/assets/images/icons/coffeeCup.png" /></div>
+                        <div class="service-icon"><img src="{{ base_path~directory }}/assets/images/icons/coffeeCup.png" /></div>
                         <div class="service-content">
                             <h5>Custom coffee</h5>
                             <hr class="service-divider" />
@@ -161,29 +150,31 @@
                 <h1 class="news-title">Recent news</h1>
                 <div class="news-slider">
                     <div class="arrows">
-                        <img class='a-left control-c prev slick-prev' id="news-carousel-prev" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Previous arrow">
-                        <img class='a-right control-c next slick-next' id="news-carousel-next" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Next arrow">
+                        <img class='a-left control-c prev slick-prev' id="news-carousel-prev" src='{{ base_path~directory }}/assets/images/icons/arrow.png' alt="Previous arrow">
+                        <img class='a-right control-c next slick-next' id="news-carousel-next" src='{{ base_path~directory }}/assets/images/icons/arrow.png' alt="Next arrow">
                     </div>
+
                 {% for n in news %}
                     <div class="card card-news">
                         <div class="card-image">
                             <div class="promo">
-                                <img src="{{base_path~directory}}/assets/images/icons/priceTag.png" />
+                                <img src="{{ base_path~directory }}/assets/images/icons/priceTag.png" />
                                 <div class="promo-text">
                                     <p>Promo price!</p>
                                     <p>August 25-31</p>
                                 </div>
                             </div>
-                            <img class="card-img-top" src="{{n.image}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ n.image }}" alt="Card image cap">
                         </div>
                         <div class="card-body">
-                            <p class="card-category">{{n.category}}</p>
-                            <h5 class="card-body-title">{{n.title}}</h5>
-                            <p class="card-description">{{n.description}}</p>
+                            <p class="card-category">{{ n.category }}</p>
+                            <h5 class="card-body-title">{{ n.title }}</h5>
+                            <p class="card-description">{{ n.description }}</p>
                             <a href="#" class="card-link">View details<div class="arrow"><i class="fas fa-chevron-right"></i></div></a>
                         </div>
                     </div>
                 {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -191,7 +182,7 @@
     <div class="gray-area"></div>
     <div class="features-and-reviews">
         <div class="features">
-            <img class="features-image" src="{{base_path~directory}}/assets/images/featuresImage.png" />
+            <img class="features-image" src="{{ base_path~directory }}/assets/images/featuresImage.png" />
             <div class="features-box">
                 <div class="features-text">
                     <h1 class="features-title">Discover a Hotel features</h1>
@@ -206,69 +197,44 @@
         <div class="reviews">
             <h1 class="reviews-title">Guest reviews</h1>
             <div class="arrows">
-                <img class='a-left control-c prev slick-prev' id="guest-reviews-prev" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Previous arrow">
-                <img class='a-right control-c next slick-next' id="guest-reviews-next" src='{{base_path~directory}}/assets/images/icons/arrow.png' alt="Next arrow">
+                <img class='a-left control-c prev slick-prev' id="guest-reviews-prev" src='{{ base_path~directory }}/assets/images/icons/arrow.png' alt="Previous arrow">
+                <img class='a-right control-c next slick-next' id="guest-reviews-next" src='{{ base_path~directory }}/assets/images/icons/arrow.png' alt="Next arrow">
             </div>
+
             {% for rev in reviews %}
             <div class="review">
                 <div class="user">
                     <div class="user-data">
-                        <img class="profile-image" src="{{rev.user.profile_image}}" />
-                        <p class="profile-data">{{rev.user.name}}</p>
+                        <img class="profile-image" src="{{ rev.user.profile_image }}" />
+                        <p class="profile-data">{{ rev.user.name }}</p>
                     </div>
                     <div class="rating">
+
                         {% for i in range(1, 5) %}
                             {% if i <= rev.rating %}
-                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarFull.png" />
+                                <img src="{{ base_path~directory }}/assets/images/icons/ratingStarFull.png" />
                             {% else %}
-                                <img src="{{base_path~directory}}/assets/images/icons/ratingStarEmpty.png" />
+                                <img src="{{ base_path~directory }}/assets/images/icons/ratingStarEmpty.png" />
                             {% endif %}
                         {% endfor %}
+
                     </div>
                 </div>
                 <div class="review-comment">
-                    <p>{{rev.comment}}</p>
+                    <p>{{ rev.comment }}</p>
                 </div>
             </div>
             {% endfor %}
+
         </div>
     </div>
 
 {% endblock %}
+
 {% block footer %}
     {% include "footer.html.twig" %}
 {% endblock %}
+
 {% block footerScripts %}
-<script>
-    $('.slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true,
-        speed: 500,
-        prevArrow: "<div class='a-left control-c prev slick-prev'><i class='fas fa-chevron-left fa-2x'></i></div>",
-        nextArrow: "<div class='a-right control-c next slick-next'><i class='fas fa-chevron-right fa-2x'></i></div>"
-    });
-    $('.news-slider').slick({
-        infinite: true,
-        autoplay: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        slide: ".card",
-        speed: 500,
-        prevArrow: $("#news-carousel-prev"),
-        nextArrow: $("#news-carousel-next")
-    });
-    $('.reviews').slick({
-        infinite: true,
-        autoplay: true,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        slide: ".review",
-        dots: true,
-        speed: 500,
-        prevArrow: $("#guest-reviews-prev"),
-        nextArrow: $("#guest-reviews-next")
-    });
-</script>
+<script src="/assets/js/app.js"></script>
 {% endblock %}
