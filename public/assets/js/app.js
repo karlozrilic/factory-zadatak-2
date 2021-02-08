@@ -68,11 +68,9 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
-jQuery.fn.extend({
-    exists: function exists() {
-        return this.length > 0 ? true : false;
-    }
-});
+$.fn.exists = function () {
+    return this.length !== 0;
+};
 $(function () {
     var productPage = $("#product-page");
     if (productPage.exists()) {
