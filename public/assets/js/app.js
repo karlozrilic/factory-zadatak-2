@@ -68,9 +68,13 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
-var hasProduct = document.currentScript.getAttribute('product');
 $(function () {
-    if (hasProduct) {
+    var isProduct = document.getElementById("product-page");
+    if (isProduct) {
+        var listOfReservedDates = $('#product-page').data('reservedList').split(',');
+        var maxAdult = $('#product-page').data('maxAdults');
+        var maxChildren = $('#product-page').data('maxChildren');
+
         $('.room-slider').slick({
             infinite: true,
             slidesToShow: 1,
@@ -99,7 +103,7 @@ $(function () {
             locale: {
                 firstDayOfWeek: 1
             },
-            onChange: function onChange(selectedDates, dateStr, instance) {
+            onChange: function onChange() {
                 for (var i = 0; i < listOfReservedDates.length; i++) {
                     if (new Date(listOfReservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
                         toDate.set("maxDate", listOfReservedDates[i]);
