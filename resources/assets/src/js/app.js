@@ -4,11 +4,10 @@ jQuery.fn.extend({
     }
 })
 $(() => {
-    let isProduct = $("#product-page").exists();
-    if (isProduct) {
-        let listOfReservedDates = window.reserved;
-        let maxAdult = $('#product-page').data('maxAdults');
-        let maxChildren = $('#product-page').data('maxChildren');
+    const productPage = $("#product-page");
+    if (productPage.exists()) {
+        const { productData: { reservedDates } } = window;
+        const { maxAdults, maxChildren } = productPage.data();
 
         $('.room-slider').slick({
             infinite: true,
@@ -32,16 +31,16 @@ $(() => {
     
         let fromDateConfig = {
             defaultDate: "2020-01-01",
-            disable: listOfReservedDates,
+            disable: reservedDates,
             dateFormat: "Y-m-d",
             allowInput: true,
             locale: {
                 firstDayOfWeek: 1
             },
             onChange: function() {
-                for (let i=0; i<listOfReservedDates.length; i++) {
-                    if (new Date(listOfReservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
-                        toDate.set("maxDate", listOfReservedDates[i]);
+                for (let i=0; i<reservedDates.length; i++) {
+                    if (new Date(reservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
+                        toDate.set("maxDate", reservedDates[i]);
                         toDate.set("minDate", fromDate.selectedDates[0]);
                         toDate.jumpToDate(fromDate.selectedDates[0]);
                         break;
@@ -54,7 +53,7 @@ $(() => {
             }
         };
         let toDateConfig = {
-            disable: listOfReservedDates,
+            disable: reservedDates,
             dateFormat: "Y-m-d",
             allowInput: true,
             locale: {
@@ -81,7 +80,7 @@ $(() => {
             let $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
             let count = parseInt($input.val());
             if ($input.attr("id") === "adult") {
-                if (count < maxAdult) {
+                if (count < maxAdults) {
                     $input.val(parseInt($input.val()) + 1);
                     return;
                 }

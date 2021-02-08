@@ -212,7 +212,8 @@
 {% block footerScripts %}
 {% set listOfDates = product.reserved_dates|map(dat => dat.date) %}
 <script>
-    window.reserved = {{ listOfDates|json_encode()|raw }};
+    window.productData = window.productData || {};
+    window.productData.reservedDates = {{ listOfDates|json_encode|raw }};
 </script>
 {{ parent() }}
 {% endblock %}

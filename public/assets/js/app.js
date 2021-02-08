@@ -74,11 +74,14 @@ jQuery.fn.extend({
     }
 });
 $(function () {
-    var isProduct = $("#product-page").exists();
-    if (isProduct) {
-        var listOfReservedDates = window.reserved;
-        var maxAdult = $('#product-page').data('maxAdults');
-        var maxChildren = $('#product-page').data('maxChildren');
+    var productPage = $("#product-page");
+    if (productPage.exists()) {
+        var _window = window,
+            reservedDates = _window.productData.reservedDates;
+
+        var _productPage$data = productPage.data(),
+            maxAdults = _productPage$data.maxAdults,
+            maxChildren = _productPage$data.maxChildren;
 
         $('.room-slider').slick({
             infinite: true,
@@ -102,16 +105,16 @@ $(function () {
 
         var fromDateConfig = {
             defaultDate: "2020-01-01",
-            disable: listOfReservedDates,
+            disable: reservedDates,
             dateFormat: "Y-m-d",
             allowInput: true,
             locale: {
                 firstDayOfWeek: 1
             },
             onChange: function onChange() {
-                for (var i = 0; i < listOfReservedDates.length; i++) {
-                    if (new Date(listOfReservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
-                        toDate.set("maxDate", listOfReservedDates[i]);
+                for (var i = 0; i < reservedDates.length; i++) {
+                    if (new Date(reservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
+                        toDate.set("maxDate", reservedDates[i]);
                         toDate.set("minDate", fromDate.selectedDates[0]);
                         toDate.jumpToDate(fromDate.selectedDates[0]);
                         break;
@@ -124,7 +127,7 @@ $(function () {
             }
         };
         var toDateConfig = {
-            disable: listOfReservedDates,
+            disable: reservedDates,
             dateFormat: "Y-m-d",
             allowInput: true,
             locale: {
@@ -150,7 +153,7 @@ $(function () {
             var $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
             var count = parseInt($input.val());
             if ($input.attr("id") === "adult") {
-                if (count < maxAdult) {
+                if (count < maxAdults) {
                     $input.val(parseInt($input.val()) + 1);
                     return;
                 }
