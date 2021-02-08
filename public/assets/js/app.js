@@ -68,10 +68,15 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
+jQuery.fn.extend({
+    exists: function exists() {
+        return this.length > 0 ? true : false;
+    }
+});
 $(function () {
-    var isProduct = document.getElementById("product-page");
+    var isProduct = $("#product-page").exists();
     if (isProduct) {
-        var listOfReservedDates = $('#product-page').data('reservedList').split(',');
+        var listOfReservedDates = window.reserved;
         var maxAdult = $('#product-page').data('maxAdults');
         var maxChildren = $('#product-page').data('maxChildren');
 

@@ -8,8 +8,7 @@
 
 {% block content %}    
 {% set listOfDates = product.reserved_dates %}
-<div class="room" id="product-page" data-reserved-list="{{ listOfDates|map(dat => "#{dat.date}")|join(", ") }}" 
-    data-max-adults={{ product.max_adults }} data-max-children={{ product.max_children }}>
+<div class="room" id="product-page" data-max-adults={{ product.max_adults }} data-max-children={{ product.max_children }}>
     <div class="room-content">
         <div class="room-slider">
 
@@ -208,4 +207,12 @@
 
 {% block footer %}
     {% include "footer.html.twig" %}
+{% endblock %}
+
+{% block footerScripts %}
+{% set listOfDates = product.reserved_dates|map(dat => dat.date) %}
+<script>
+    window.reserved = {{ listOfDates|json_encode()|raw }};
+</script>
+{{ parent() }}
 {% endblock %}

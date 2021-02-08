@@ -1,9 +1,14 @@
+jQuery.fn.extend({
+    exists: function() {
+        return this.length > 0 ? true : false;
+    }
+})
 $(() => {
-    var isProduct = document.getElementById("product-page");
+    let isProduct = $("#product-page").exists();
     if (isProduct) {
-        var listOfReservedDates = $('#product-page').data('reservedList').split(',');
-        var maxAdult = $('#product-page').data('maxAdults');
-        var maxChildren = $('#product-page').data('maxChildren');
+        let listOfReservedDates = window.reserved;
+        let maxAdult = $('#product-page').data('maxAdults');
+        let maxChildren = $('#product-page').data('maxChildren');
 
         $('.room-slider').slick({
             infinite: true,
@@ -25,7 +30,7 @@ $(() => {
             nextArrow: $("#room-slider-next")
         });
     
-        var fromDateConfig = {
+        let fromDateConfig = {
             defaultDate: "2020-01-01",
             disable: listOfReservedDates,
             dateFormat: "Y-m-d",
@@ -34,7 +39,7 @@ $(() => {
                 firstDayOfWeek: 1
             },
             onChange: function() {
-                for (var i=0; i<listOfReservedDates.length; i++) {
+                for (let i=0; i<listOfReservedDates.length; i++) {
                     if (new Date(listOfReservedDates[i]).getTime() > new Date(fromDate.selectedDates[0]).getTime()) {
                         toDate.set("maxDate", listOfReservedDates[i]);
                         toDate.set("minDate", fromDate.selectedDates[0]);
@@ -48,7 +53,7 @@ $(() => {
                 }
             }
         };
-        var toDateConfig = {
+        let toDateConfig = {
             disable: listOfReservedDates,
             dateFormat: "Y-m-d",
             allowInput: true,
@@ -56,16 +61,16 @@ $(() => {
                 firstDayOfWeek: 1
             }
         };
-        var fromDate = $("#fromDate").flatpickr(fromDateConfig);
-        var toDate = $("#toDate").flatpickr(toDateConfig);
+        let fromDate = $("#fromDate").flatpickr(fromDateConfig);
+        let toDate = $("#toDate").flatpickr(toDateConfig);
 
 
         $(".minus").on("click", (event) => {
-            var $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
+            let $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
             if (parseInt($input.val()) <= 0) {
                 return;
             }
-            var count = parseInt($input.val()) - 1;
+            let count = parseInt($input.val()) - 1;
             if ($input.attr("id") === "adult") {
                 count = count < 1 ? 1 : count;
             }
@@ -73,8 +78,8 @@ $(() => {
             return;
         });
         $(".plus").on("click", (event) => {
-            var $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
-            var count = parseInt($input.val());
+            let $input = $(event.currentTarget).parent().parent().find(".guests-number").find(".number");
+            let count = parseInt($input.val());
             if ($input.attr("id") === "adult") {
                 if (count < maxAdult) {
                     $input.val(parseInt($input.val()) + 1);
@@ -87,7 +92,7 @@ $(() => {
             }
         });
         
-        var limit = 500;
+        const limit = 500;
         $("#textarea").attr("maxlength",limit);
         $("#textarea").on("keyup", (event) => {
             if ($(event.currentTarget).val().length > limit) {
